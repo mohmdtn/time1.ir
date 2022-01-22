@@ -1,0 +1,72 @@
+/* ////////////////////// variables */
+
+:root{
+    --site-pourple: #5568F2;
+    --site-gray: #646E80;
+    --stie-high-gray: #323846;
+    --site-soft-gray: #E4E4E4;
+    --site-bg: #FAF9F4;
+}
+
+/* ////////////////////// end of variables */
+
+
+
+
+
+
+
+
+/* ////////////////////// most usefull class */
+
+.pointer{
+    cursor: pointer;
+}
+
+.bg-gradiant-1{
+    background: linear-gradient(to right, #3494e6, #ec6ead) !important;
+}
+
+.bg-gradiant-2{
+    background: linear-gradient(to right, #8360c3, #2ebf91) !important;
+}
+
+.shake:hover{
+    cursor: pointer;
+    animation: .3s shake infinite;
+}
+
+@keyframes shake {
+    50%{
+        transform: rotate(-5deg) scale(1.2);
+    }
+    100%{
+        transform: rotate(5deg) scale(1);
+    }
+}
+
+.border-radius-5{
+    border-radius: 17px;
+}
+
+.border-radius-4{
+    border-radius: 13px;
+}
+
+.border-radius-3{
+    border-radius: 10px;
+}
+
+.border-radius-2{
+    border-radius: 6px;
+}
+
+
+
+.box-shadow-normal{
+    box-shadow: 0px 3px 12px 0px #dddddd;
+}
+
+
+/* ////////////////////// end of most class */
+
