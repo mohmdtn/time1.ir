@@ -169,7 +169,7 @@ header, .headContent{
     box-shadow: 0px 41px 71px #4D4D4D61;
 }
 
-.calenderSvg{
+/* .calenderSvg{
     animation: calenderSvg 1.5s;
 }
 
@@ -186,7 +186,7 @@ header, .headContent{
         opacity: 1;
         margin-top: 0;
     }
-}
+} */
 
 /* //////////////////////////////// end of header */
 
@@ -234,10 +234,53 @@ header, .headContent{
     box-shadow: 0px 56px 92px #00000029;
 }
 
-.calenderHeader h4{
+.calenderHeader h3{
+    font-weight: bold;
+    color: var(--site-high-gray);
+}
+
+.calenderHeader span i{
+    font-size: 34px;    
+}
+
+.calenderHeader span span{
+    color: var(--site-pourple);
     font-weight: bold;
 }
 
+.calenderBodyHead{
+    border-top: 3px solid var(--site-pourple);
+    color: var(--site-pourple);
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.calenderBodyBody{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.calenderBodyBody div{
+    flex: 0 0 14.28%;
+    padding-bottom: 30px;
+}
+
+.calenderBodyBody div span{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 6px 2px;
+    border-radius: 50%;
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.calenderBodyBody div span.curentDay{
+    color: #fff;
+    background-color: var(--site-pourple);
+    box-shadow: 0px 20px 34px #00000029;
+}
 
 /* //////////////////////////////// end of calender */
 
@@ -255,22 +298,18 @@ header, .headContent{
 
 
 
+/* @media screen and (max-width: 992px) {
 
+    header,.headContent{
+        height: auto;
+    }
 
+} */
 
 
 @media screen and (max-width: 768px) {
-    .headerOrg {
-        display: block;
-    }
-
-    .sidebarHeader {
-        width: 100%;
-    }
-
-    .bodyHeader {
-        display: none;
-        width: 100%;
+    header,.headContent{
+        height: auto;
     }
 
 }
