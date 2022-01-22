@@ -263,7 +263,7 @@ header, .headContent{
 
 .calenderBodyBody div{
     flex: 0 0 14.28%;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .calenderBodyBody div span{
@@ -282,10 +282,147 @@ header, .headContent{
     box-shadow: 0px 20px 34px #00000029;
 }
 
+
+.calenderText{
+    padding-right: 35px;
+}
+
+.calenderSingleText{
+    margin-bottom: 15px;
+}
+
+.calenderSingleText h4{
+    display: inline-block;
+    padding-left: 10px;
+    font-weight: bolder;
+    color: var(--site-high-gray);
+}
+
+.calenderSingleText span{
+    color: var(--site-gray);
+    font-size: 14px;
+}
+
+.calenderTextHoliday h4, .calenderTextHoliday span{
+    color: var(--site-pourple) !important;
+}
+
+/* .calenderTextInner{
+    overflow-y: scroll;
+    height: 538px;
+}
+
+.calenderTextInner::-webkit-scrollbar{
+    width: 13px;
+}
+
+.calenderTextInner::-webkit-scrollbar-track {
+    background: #dadada; 
+    border-radius: 10px;
+}
+
+.calenderTextInner::-webkit-scrollbar-thumb {
+    background: var(--site-pourple); 
+    transition: .2s;
+    border-radius: 10px;
+} */
+
+.showToday{
+    background-color: var(--site-pourple);
+    border: 3px solid #384399;
+    text-align: center;
+    color: #fff;
+    padding: 5px;
+    display: block;
+    width: 100%;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+
 /* //////////////////////////////// end of calender */
 
 
 
+
+
+
+
+
+
+/* //////////////////////////////// footer */
+
+.logoFooter{
+    background-color: var(--site-pourple);
+    padding: 5px;
+    line-height: 1;
+    border-radius: 35px;
+    color: #fff;
+    text-align: center;
+    font-size: 60px;
+}
+
+.socialMedia a{
+    color: var(--site-pourple);
+    font-size: 24px;
+    transition: .3s;
+}
+
+.socialMedia a:hover{
+    transform: scale(1.4);
+
+}
+
+.footerItemInner h5{
+    color: var(--site-high-gray);
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    max-width: 80%;
+}
+
+.footerItemInner p{
+    font-size: 15px;
+    color: var(--site-high-gray);
+    line-height: 2;
+}
+
+.footerItemInner ul{
+    list-style: none;
+    padding-right: 20px;
+}
+
+.footerItemInner ul a{
+    color: var(--site-high-gray);
+    text-decoration: none;
+}
+
+.footerItemInner ul a li{
+    padding-bottom: 20px;
+}
+
+.mapouter iframe{
+    width: 100%;
+    height: 180px;
+    border-radius: 20px;
+}
+
+.footerItemInner h6{
+    color: var(--site-high-gray);
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.footerLogin{
+    background-color: var(--site-pourple);
+    border: none;
+    padding: 5px 25px;
+}
+
+/* //////////////////////////////// end of footer */
 
 
 
