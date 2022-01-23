@@ -61,7 +61,16 @@ body, html {
     margin-top: 5px;
 }
 
+.nav-item .menuLine{
+    background-color: #323846;
+}
+
 .menuItemWrapper:hover .menuLine{
+    width: 100%;
+    visibility: visible;
+}
+
+.nav-item:hover .menuLine{
     width: 100%;
     visibility: visible;
 }
@@ -111,7 +120,48 @@ header, .headContent{
     padding: 10px;
     text-align: center;
     line-height: 1.7;
-    box-shadow: 0px 58px 97px #00000029
+    box-shadow: 0px 58px 97px #00000029;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.createCalenderIconWrapper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.createYourOwnCalenderInner i{
+    color: #fff;
+    transform: scale(.3);
+    transition: .3s;
+    opacity: .1;
+}
+
+.createYourOwnCalenderInner:hover i{
+    transform: scale(2.4);
+    opacity: 1;
+}
+
+.createYourOwnCalenderInner:hover{
+    background-color: var(--site-pourple);
+    border: 6px var(--site-soft-gray) solid;
+    box-shadow: 0px 58px 97px #0000005b;
+}
+
+.createYourOwnCalenderInner p{
+    transition: .1s;
+}
+
+.createYourOwnCalenderInner:hover p{
+    visibility: hidden;
 }
 
 .yearName{
@@ -239,13 +289,23 @@ header, .headContent{
     color: var(--site-high-gray);
 }
 
+.calenderHeader span{
+    cursor: pointer;
+}
+
 .calenderHeader span i{
-    font-size: 34px;    
+    font-size: 34px;
+    transition: .3s; 
 }
 
 .calenderHeader span span{
     color: var(--site-pourple);
     font-weight: bold;
+}
+
+.calenderHeader span:hover i{
+    transform: scale(1.6) rotate(1turn);
+    color: var(--site-pourple);
 }
 
 .calenderBodyHead{
@@ -371,6 +431,10 @@ header, .headContent{
 .socialMedia a:hover{
     transform: scale(1.4);
 
+}
+
+.footerItemInner{
+    height: 100%;
 }
 
 .footerItemInner h5{

@@ -37,26 +37,32 @@
 
                             <li class="nav-item nav-link">
                                 <a class="nav-inner" href="">تبدیل تاریخ</a>
+                                <div class="menuLine"></div>
                             </li>
 
                             <li class="nav-item nav-link">
                                 <a class="nav-inner" href="">محاسبه سن</a>
+                                <div class="menuLine"></div>
                             </li>
 
                             <li class="nav-item nav-link">
                                 <a class="nav-inner" href="">تقویم روز</a>
+                                <div class="menuLine"></div>
                             </li>
 
                             <li class="nav-item nav-link">
                                 <a class="nav-inner" href="">تقویم ماه</a>
+                                <div class="menuLine"></div>
                             </li>
 
                             <li class="nav-item nav-link">
                                 <a class="nav-inner" href="">وبلاگ</a>
+                                <div class="menuLine"></div>
                             </li>
 
                             <li class="nav-item nav-link">
                                 <a class="nav-inner" href="">ارتباط با ماط</a>
+                                <div class="menuLine"></div>
                             </li>
 
                         </ul>
@@ -74,7 +80,7 @@
             <section class="headContent pt-5">
                 <div class="row">
 
-                    <div class="col-md-2 d-flex justify-content-center">
+                    <div class="col-md-2 pb-5 pb-md-0 d-flex justify-content-center d-none d-md-flex">
                         <div class="watchBand d-flex align-items-center justify-content-center">
                             <div class="headLogo">time1</div>
                             <div class="watchDisplay">
@@ -123,7 +129,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 border-left-1 text-center allDateWrapper">
+                    <div class="col-md-3 pb-5 pb-md-0 border-left-1 text-center allDateWrapper">
 
                         <div class="datePackage pb-4">
                             <h4 class="yearName">خورشیدی</h4>
@@ -151,11 +157,14 @@
 
                     </div>
 
-                    <div class="col-md-3 d-flex align-items-center justify-content-center">
+                    <div class="col-md-3 pb-5 pb-md-0 d-flex align-items-center justify-content-center">
                         <div class="createYourOwnCalender">
                             <a class="text-decoration-none" href="">
                                 <div class="createYourOwnCalenderInner">
-                                    تقویم خودت<br>رو بساز
+                                    <p class="m-0">تقویم خودت<br>رو بساز</p>
+                                    <div class="createCalenderIconWrapper">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
                                 </div>
                             </a>
                         </div>
@@ -180,7 +189,7 @@
                 <div class="row">
                     <section class="spaceForSideMenu col-md-2"></section>
 
-                    <section class="col-md-5">
+                    <section class="col-md-5 pb-5 pb-md-0">
                         <div class="calenderTable p-2 bg-white">
 
                             <div class="calenderHeader py-3 d-flex justify-content-between align-items-center">
@@ -331,8 +340,8 @@
                 <div class="row">
                     <div class="col-md-2"></div>
 
-                    <div class="col-md-2">
-                        <div class="footerItemInner d-flex flex-column">
+                    <div class="col-md-2 pb-5 pb-md-0">
+                        <div class="footerItemInner d-flex flex-column justify-content-between">
 
                             <div>
                                 <div class="logoFooter">time1</div>
@@ -352,16 +361,16 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 pb-5 pb-md-0">
                         <div class="footerItemInner">
                             <h5>درباره ی تایم وان</h5>
-                            <p>
+                            <p class="m-0">
                                 وب سایت تایم وان، سامانه است که خدمات تقویم و ساعت ایران را به کاربران گرامی ارائه می‌کند در سامانه می‌توانید تقویم به صورت پست و استوری در اینستاگرام منتشر کنید. از خدمات ویژه این سرویس می‌تواند به پست و استوری زمان‌دار اشاره کرد. با صرف هزینه اندک به صورت سالیانه، می‌توانید تقویم را در هر ساعت و هر روز و یا به هر تعداد که می‌خواهد به صورت خودکار و بدون دخالت شما، در اینستاگرام انتشار دهید.
                             </p>
                         </div>
                     </div>
 
-                    <div class="col-md-2">
+                    <div class="col-md-2 pb-5 pb-md-0">
                         <div class="footerItemInner">
                             <h5>لینک های مهم</h5>
                             <ul>
@@ -373,7 +382,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-3">
+
+                    <div class="col-md-3 pb-5 pb-md-0">
                         <div class="mapouter">
                             <div class="gmap_canvas">
                                 <iframe id="gmap_canvas"
@@ -395,11 +405,7 @@
 
 
 </body>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        window.setTimeout(document.querySelector('svg').classList.add('animated'), 1000);
-    })
-</script>
+
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/swiper-bundle.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
