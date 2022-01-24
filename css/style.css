@@ -8,6 +8,12 @@
     src: url('fonts/Lalezar-Regular.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'IRANyekan';
+    src: url('fonts/iranyekanwebregularfanum.ttf') format('truetype');
+}
+
+
 body, html {
     padding: 0;
     margin: 0;
@@ -17,6 +23,9 @@ body, html {
     background-color: var(--site-bg);
 }
 
+img{
+    max-width: 100%;
+}
 
 
 
@@ -165,7 +174,8 @@ header, .headContent{
 }
 
 .yearName{
-    font-weight: bolder;
+    font-family: 'IRANyekan';
+    font-weight: bold;
     color: var(--site-pourple);
 }
 
@@ -410,6 +420,276 @@ header, .headContent{
 
 
 
+
+
+
+
+
+
+
+/* //////////////////////////////////// day calender page */
+
+.allDates .datePackage{
+    border-left: 2px solid var(--site-soft-gray);
+}
+
+.allDates .datePackage:last-child{
+    border-left: none;
+}
+
+.allEvents h4{
+    font-weight: bolder;
+    color: var(--site-pourple);
+    font-family: 'IRANyekan';
+}
+
+.eventsWrapper{
+    background-color: #F8F8F8;
+    box-shadow: 0px 20px 92px #00000029;
+    border-radius: 15px;
+    position: relative;
+    z-index: 5;
+    color: var(--site-high-gray);
+    opacity: .6;
+}
+
+.selectBox select{
+    width: 100%;
+    background-color: #faf9f4;
+    box-shadow: inset 0px 2px 15px #00000029;
+    text-align: center;
+    padding: 13px;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    border-radius: 10px;
+    color: #C0C3C8;
+}
+
+/* //////////////////////////////////// end of day calender page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* //////////////////////////////////// contact us page */
+
+.FormsWrapper{
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 39px 89px #00000029;
+    position: relative;
+    z-index: 5;
+}
+
+.FormsWrapper form label{
+    color: var(--site-high-gray);
+}
+
+.FormsWrapper form input{
+    border: none;
+    outline: none;
+    background-color: #00000000;
+    border-bottom: 2px solid #d1d1d1;
+    border-radius: 0;
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-bottom: 2px;
+    transition: .2s;
+}
+
+.FormsWrapper form input::placeholder{
+    color: #d1d1d1;
+}
+
+.FormsWrapper form input:focus{
+    box-shadow: none;
+    width: 90%;
+    background-color: #00000000;
+    /* border-color: #444444; */
+}
+
+#number, #email, #username, #password{
+    direction: ltr;
+    text-align: left;
+}
+
+.FormsWrapper form textarea{
+    border-radius: 10px;
+    border-bottom-left-radius: 2px;
+    background-color: #32384617;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    height: 78%;
+}
+
+.FormsWrapper form textarea::placeholder{
+    color: #C0C3C8;
+}
+
+.formSubmit{
+    background-color: var(--site-pourple);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 17px 5px;
+    font-size: 19px;
+}
+
+
+
+.contactUsText{
+    background-color: var(--stie-high-gray);
+    padding: 18px;
+    border-radius: 22px;
+    height: 100%;
+    padding-bottom: 70px;
+}
+
+.contactUsText h4{
+    color: var(--site-pourple);
+}
+
+.contactUsText p{
+    color: #fff;
+    font-size: 13px;
+}
+
+.contactUsText div span{
+    display: block;
+    color: #fff;
+    font-size: 12px;
+}
+
+.contactUsText div i{
+    color: var(--site-pourple);
+    font-size: 25px;
+}
+
+/* //////////////////////////////////// end of contact us page */
+
+
+
+
+
+
+
+
+
+
+
+
+/* //////////////////////////////////// login and singup page */
+
+.loginForm, .singUpForm{
+    padding: 10px 80px 60px 80px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.singUpForm{
+    background-color: #323846;
+    border-radius: 15px;
+}
+
+.enterForms h4{
+    font-weight: bold;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+.layoutHeightControll{
+    height: 58px;
+    margin-bottom: 24px;
+}
+
+.formSubmit2{
+    background-color: #fff;
+    color: var(--site-pourple);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 17px 5px;
+    font-size: 19px;
+}
+
+.forgetPassLink a{
+    color: var(--site-high-gray);
+    font-size: 13px;
+    transition: .3s;
+}
+
+.forgetPassLink a:hover{
+    color: var(--site-pourple);
+}
+
+/* //////////////////////////////////// end of login and singup page */
+
+
+
+
+
+
+
+
+
+
+
+
+/* //////////////////////////////////// code accept page */
+
+.codeAcceptWrapper{
+    padding: 0 40px;
+}
+
+.codeAccept{
+    background-color: var(--stie-high-gray);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.smsForm{
+    border-left: 1px solid #c0c0c0;
+    padding: 35px;
+    height: 100%;
+    margin-top: auto;
+}
+
+/* //////////////////////////////////// end of code accept page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* //////////////////////////////// footer */
 
 .logoFooter{
@@ -512,5 +792,16 @@ header, .headContent{
     header,.headContent{
         height: auto;
     }
+
+    /* /////////// code page */
+    .codeAcceptWrapper{
+        padding: 0;
+    }
+
+    .smsForm{
+        padding: 20px 0;
+        border: none;
+    }
+    /* \\\\\\\\\\\ end code page */
 
 }
