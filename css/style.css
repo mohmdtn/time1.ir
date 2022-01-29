@@ -458,10 +458,10 @@ header, .headContent{
     background-color: #faf9f4;
     box-shadow: inset 0px 2px 15px #00000029;
     text-align: center;
-    padding: 13px;
+    padding: 7px;
     border: none;
     outline: none;
-    font-size: 24px;
+    font-size: 29px;
     border-radius: 10px;
     color: #C0C3C8;
 }
@@ -580,6 +580,18 @@ header, .headContent{
     font-size: 25px;
 }
 
+.imageContactUs{
+    position: relative;
+}
+
+.imageContactUs img{
+    max-width: 60%;
+    position: absolute;
+    right: -20%;
+    top: -80px;
+    z-index: 4;
+}
+
 /* //////////////////////////////////// end of contact us page */
 
 
@@ -604,6 +616,10 @@ header, .headContent{
 .singUpForm{
     background-color: #323846;
     border-radius: 15px;
+}
+
+.singupForm input , .singupForm input:focus{
+    color: #fff;
 }
 
 .enterForms h4{
@@ -673,6 +689,107 @@ header, .headContent{
 /* //////////////////////////////////// end of code accept page */
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* /////////////////////////////////// month calender */
+
+.monthAllEventsInner{
+    background-color: #F8F8F8;
+    box-shadow: 0px 20px 92px #00000029;
+    border-radius: 15px;
+    position: relative;
+    z-index: 5;
+    color: var(--site-high-gray);
+    opacity: 1;
+    min-height: 100px;
+}
+
+.monthAllEventName{
+    color: var(--site-pourple);
+    font-weight: bolder;
+}
+
+
+.monthAllEvent{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.monthAllEventNumber p{
+    padding: 3px;
+    border-radius: 50%;
+    border: 1px solid #999999;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    color: var(--site-pourple);
+    font-size: 20px;
+    background-color: #fff;
+}
+
+.createCircle p{
+    padding: 3px;
+    border-radius: 50%;
+    border: 1px solid #999999;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    color: var(--site-pourple);
+    font-size: 16px;
+    margin: 0;
+    background-color: #fff;
+    box-shadow: 0px 7px 9px #0000001f;
+}
+
+.oddItems .monthAllEventSingleDay:first-child{
+    padding-top: 0 !important;
+}
+
+.createCircleHoliday p{
+    background-color: var(--site-pourple);
+    color: #fff;
+}
+
+.monthEventText{
+    padding: 0 10px;
+    color: #8d8d8d;
+    max-width: 320px;
+    text-align: center;
+}
+
+.line{
+    width: 50px;
+    height: .5px;
+    background-color: #8d8d8d;
+    transition: .2s;
+}
+
+.heightLine{
+    width: 1px;
+    background-color: #8d8d8d;
+    padding: 0;
+}
+
+
+/* /////////////////////////////////// end of month calender */
 
 
 
@@ -803,5 +920,58 @@ header, .headContent{
         border: none;
     }
     /* \\\\\\\\\\\ end code page */
+
+
+    /* /////////// month calender page */
+    .allDates .datePackage{
+        border-left: none;
+    }
+    .line{
+        width: 30px;
+    }
+
+    .monthEventText{
+        font-size: 14px;
+    }
+    /* \\\\\\\\\\\ end month calender page */
+
+
+    /* /////////// contact us page */
+    .imageContactUs img{
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    /* \\\\\\\\\\\ end month calender page */
+
+
+    /* /////////// logein page */
+    .singUpForm, .loginForm{
+        padding: 10px 10px 60px 10px;
+    }
+    /* \\\\\\\\\\\ end logein page */
+
+}
+
+
+
+@media screen and (max-width: 500px) {
+
+    .calenderBodyBody div span{
+        font-size: 16px;
+    }
+
+}
+
+
+
+@media screen and (max-width: 350px) {
+
+    /* /////////// month contact us page */
+    .line{
+        width: 10px;
+    }
+    /* \\\\\\\\\\\ end month calender page */
 
 }
