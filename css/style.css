@@ -107,6 +107,15 @@ img{
     box-shadow: 0px 20px 34px #0000005b;
 }
 
+.curentPage{
+    background-color: #fff;
+    border-radius: 16px;
+    border: 3px solid var(--site-pourple);
+    color: var(--site-pourple) !important;
+    box-shadow: 0px 20px 34px #00000029;
+    padding: 1px 5px;
+}
+
 /* //////////////////////////////// end of top menu */
 
 
@@ -229,7 +238,7 @@ header, .headContent{
     box-shadow: 0px 41px 71px #4D4D4D61;
 }
 
-/* .calenderSvg{
+.calenderSvg{
     animation: calenderSvg 1.5s;
 }
 
@@ -246,7 +255,7 @@ header, .headContent{
         opacity: 1;
         margin-top: 0;
     }
-} */
+}
 
 /* //////////////////////////////// end of header */
 
@@ -1025,6 +1034,9 @@ header, .headContent{
     .datePackage{
         border-left: none !important;
     }
+    .calenderText{
+        padding-right: 0;
+    }
 
     /* /////////// code page */
     .codeAcceptWrapper{
@@ -1091,6 +1103,10 @@ header, .headContent{
         font-size: 16px;
     }
 
+    .calenderBodyBody div{
+        padding-bottom: 12px;
+    }
+
 }
 
 
@@ -1098,6 +1114,12 @@ header, .headContent{
 @media screen and (max-width: 350px) {
     .calenderBodyBody div span{
         width: 100%;
+    }
+    .calenderSingleText span{
+        font-size: 12px;
+    }
+    .calenderSingleText h4{
+        font-size: 19px;
     }
 
     /* /////////// month contact us page */
