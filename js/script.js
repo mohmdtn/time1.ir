@@ -28,3 +28,10 @@ function checkTime(i) {
   return i;
 }
 
+
+
+
+$(".navbar-toggler").click(function (e) { 
+  $(".menuSide").toggleClass("openMenu");
+  $(".menu-button").toggleClass("cross");
+});

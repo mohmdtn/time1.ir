@@ -59,6 +59,11 @@ img{
     justify-content: space-around !important;
 }
 
+.navbar-toggler i{
+    font-size: 33px;
+    color: #323846;
+}
+
 .menuLine{
     background-color: #fff;
     width: 0%;
@@ -82,6 +87,10 @@ img{
 .nav-item:hover .menuLine{
     width: 100%;
     visibility: visible;
+}
+
+.topMenu{
+    height: 60px;
 }
 
 .login{
@@ -238,6 +247,19 @@ header, .headContent{
     box-shadow: 0px 41px 71px #4D4D4D61;
 }
 
+.blink{
+    animation: blink .6s alternate infinite;
+}
+
+@keyframes blink{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 .calenderSvg{
     animation: calenderSvg 1.5s;
 }
@@ -274,12 +296,20 @@ header, .headContent{
     position: fixed;
     z-index: 3;
     top: 0;
+    transition: .3s;
 }
 
 .menuSide a{
     color: #fff;
     font-weight: bold;
     text-decoration: none;
+}
+
+.openMenu{
+    opacity: 1;
+    width: 10rem !important;
+    box-shadow: -17px 0px 92px #00000063 !important;
+    visibility: visible !important;
 }
 
 /* //////////////////////////////// end of side menu */
@@ -979,10 +1009,21 @@ header, .headContent{
 .footerItemInner ul a{
     color: var(--site-high-gray);
     text-decoration: none;
+
 }
 
 .footerItemInner ul a li{
     padding-bottom: 20px;
+    transition: .4s;
+}
+
+.footerItemInner ul a:hover{
+    color: var(--site-pourple);
+    font-weight: bold;
+}
+
+.footerItemInner ul a:hover li{
+    padding-right: 15px;
 }
 
 .mapouter iframe{
@@ -1018,24 +1059,87 @@ header, .headContent{
 
 
 
-/* @media screen and (max-width: 992px) {
+@media screen and (max-width: 1300px) {
 
-    header,.headContent{
-        height: auto;
+    .footerItemInner ul{
+        padding: 0;
+    }
+    
+    .calenderHeader h3{
+        font-size: 25px;
     }
 
-} */
+}
+
+
+@media screen and (max-width: 1100px){
+    .loginForm, .singUpForm{
+        padding: 10px 30px 60px 30px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    /* //////// watch and side menu fix */
+    .watchBand{
+        width: 80px;
+    }
+    
+    .watchDisplay{
+        width: 140px;
+        height: 140px;
+        font-size: 56px;
+    }
+
+    .menuSide{
+        width: 80px;
+    }
+    
+    .menuSide a{
+        font-size: 14px;
+    }
+    /* \\\\\\\ end watch and side menu fix */
+}
 
 
 @media screen and (max-width: 768px) {
-    header,.headContent{
-        height: auto;
+    header, .headContent{
+        min-height: auto;
     }
     .datePackage{
         border-left: none !important;
     }
     .calenderText{
         padding-right: 0;
+    }
+
+    .datePackage1, .datePackage2{
+        border-bottom: 1px solid #afafaf;
+    }
+    .datePackage1, .datePackage3{
+        border-left: 1px solid #afafaf !important;
+    }
+
+    .footerItemInner h5{
+        max-width: 100%;
+    }
+
+
+    .navbar{
+        box-shadow: 0px 20px 34px #9f9f9f29;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 7;
+        background: #faf9f4;
+    }
+
+
+    .menuSide {
+        right: 0;
+        width: 0;
+        display: none;
+        visibility: hidden;
     }
 
     /* /////////// code page */
@@ -1105,6 +1209,10 @@ header, .headContent{
 
     .calenderBodyBody div{
         padding-bottom: 12px;
+    }
+
+    .createYourOwnCalenderInner{
+        font-size: 32px;
     }
 
 }

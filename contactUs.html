@@ -24,7 +24,16 @@
 
                 <div class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                     data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+                    aria-label="Toggle navigation">
+                    <div class="menu-button">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <div class="px-3 d-block d-md-none">
+                    <div class="login loginHead"><i class="fas fa-user"></i></div>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -80,12 +89,12 @@
             <div class="row">
 
                 <!--------------------------- side menu -->
-                <div class="col-md-2 pb-5 pb-md-0 d-flex justify-content-center d-none d-md-flex">
-                    <div class="watchBand d-flex align-items-center justify-content-center">
+                <div class="col-md-2 pb-5 pb-md-0 d-flex justify-content-center d-flex">
+                    <div class="watchBand d-none d-md-flex align-items-center justify-content-center">
                         <div class="headLogo">time1</div>
                         <div class="watchDisplay">
                             <span class="hourTimer">12</span> <br>
-                            : <span class="minuteTimer">12</span>
+                            <span class="blink">:</span> <span class="minuteTimer">12</span>
                         </div>
                     </div>
 

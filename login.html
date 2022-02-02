@@ -24,7 +24,16 @@
 
                 <div class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                     data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+                    aria-label="Toggle navigation">
+                    <div class="menu-button">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <div class="px-3 d-block d-md-none">
+                    <div class="login loginHead"><i class="fas fa-user"></i></div>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -33,7 +42,7 @@
 
                     <ul class="navbar-nav">
 
-                        <li class="nav-item nav-link curentPage">
+                        <li class="nav-item nav-link">
                             <a class="nav-inner" href="">تبدیل تاریخ</a>
                             <div class="menuLine"></div>
                         </li>
@@ -59,7 +68,7 @@
                         </li>
 
                         <li class="nav-item nav-link">
-                            <a class="nav-inner" href="">ارتباط با ماط</a>
+                            <a class="nav-inner" href="">ارتباط با ما</a>
                             <div class="menuLine"></div>
                         </li>
 
@@ -80,12 +89,12 @@
             <div class="row">
 
                 <!--------------------------- side menu -->
-                <div class="col-md-2 pb-5 pb-md-0 d-flex justify-content-center d-none d-md-flex">
-                    <div class="watchBand d-flex align-items-center justify-content-center">
+                <div class="col-md-2 pb-5 pb-md-0 d-flex justify-content-center d-flex">
+                    <div class="watchBand d-none d-md-flex align-items-center justify-content-center">
                         <div class="headLogo">time1</div>
                         <div class="watchDisplay">
                             <span class="hourTimer">12</span> <br>
-                            : <span class="minuteTimer">12</span>
+                            <span class="blink">:</span> <span class="minuteTimer">12</span>
                         </div>
                     </div>
 
@@ -123,7 +132,7 @@
                         </div>
 
                         <div class="menuItemWrapper">
-                            <a class="nav-inner" href="">ارتباط با ما</a>
+                            <a class="nav-inner" href="">ارتباط با ماط</a>
                             <div class="menuLine"></div>
                         </div>
                     </div>
@@ -166,7 +175,7 @@
                                         <form action="" method="">
 
                                             <label class="text-white" for="number">شماره همراه</label>
-                                            <input class="form-control text-left mb-4" type="number" placeholder="+98" id="number" name="">
+                                            <input class="text-white form-control text-left mb-4" type="number" placeholder="+98" id="number" name="">
 
                                             <div class="layoutHeightControll"></div>
                                             
