@@ -1140,6 +1140,16 @@ header, .headContent{
         width: 0;
         display: none;
         visibility: hidden;
+        z-index: 5;
+    }
+
+
+    .watchBand{
+        height: 75px;
+        width: 100vh;
+        position: relative;
+        display: flex !important;
+        z-index: 4;
     }
 
     /* /////////// code page */
