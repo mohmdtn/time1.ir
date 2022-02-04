@@ -3,7 +3,7 @@ $(document).ready(function () {
   $(".ageCalculate").click(function () {
     $(".ageResult").slideDown();
   });
-  
+
 });
 
 
@@ -31,7 +31,19 @@ function checkTime(i) {
 
 
 
-$(".navbar-toggler").click(function (e) { 
+$(".navbar-toggler").click(function (e) {
   $(".menuSide").toggleClass("openMenu");
   $(".menu-button").toggleClass("cross");
+});
+
+
+$(document).scroll(function () {
+  if (document.documentElement.scrollTop > 200) {
+    // $(".watchBand ").css({ "height": "50vh", "transition": ".3s" });
+    $(".watchBand").addClass("sideBarScroll");
+  }
+  else {
+    // $(".watchBand ").css({ "height": "100vh", "transition": ".3s" });
+    $(".watchBand").removeClass("sideBarScroll")
+  }
 });

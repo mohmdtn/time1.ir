@@ -229,6 +229,7 @@ header, .headContent{
     position: absolute;
     top: 0;
     z-index: 4;
+    transition: .3s;
 }
 
 .watchDisplay{
@@ -1055,7 +1056,11 @@ header, .headContent{
 
 
 
-
+@media screen and (min-width: 768px) {
+    .sideBarScroll{
+        height: 50vh;
+    }
+}
 
 
 
