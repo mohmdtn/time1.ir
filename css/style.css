@@ -454,6 +454,19 @@ header, .headContent{
     font-weight: bold;
 }
 
+.comment{
+    background-color: #fff;
+    position: relative;
+    z-index: 5;
+
+}
+
+.comment h4{
+    background-color: var(--site-pourple);
+    color: #fff;
+    padding: 10px;
+}
+
 
 /* //////////////////////////////// end of calender */
 
@@ -1140,6 +1153,149 @@ header, .headContent{
 }
 
 /* /////////////////////////////////// end of profile prime page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* /////////////////////////////////// isntagram post page */
+
+.typeWrapper h2{
+    color: var(--stie-high-gray);
+    font-family: "IRANyekanBold";
+    padding-left: 40px;
+}
+
+.type{
+    padding: 0 10px;
+}
+
+.typeInner{
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    width: 87px;
+    background-color: var(--site-pourple);
+    color: #fff;
+    font-size: 19;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.typeInner:hover{
+    box-shadow: 0px 30px 42px #2c2c2c46;
+}
+
+.curentType{
+    background-color: #fff;
+    color: var(--site-pourple);
+    padding: 45px 20px;
+    position: relative;
+    box-shadow: 0px 30px 42px #2C2C2C26;
+}
+
+.curentType span{
+    background-color: var(--site-pourple);
+    position: absolute;
+    bottom: 0;
+    left: 29%;
+    width: 40px;
+    height: 3px;
+}
+
+.dailyTimeSetting{
+    font-family: "IRANyekan";
+    padding-right: 20px;
+}
+
+.dailyTimeSetting h3{
+    color: var(--stie-high-gray);
+    font-family: "IRANyekanBold";
+    padding-left: 40px;
+}
+
+.timeHead label{
+    color: var(--site-pourple);
+    padding-left: 6px;
+}
+
+/* .timeHead input[type="checkbox"]{
+    border: none;
+    padding: 5px;
+    box-shadow: 0px 30px 42px #2C2C2C26;
+} */
+
+.dayTime h4 , .hourTime h4{
+    color: var(--site-pourple);
+    position: relative;
+}
+
+.dayTime label{
+    font-family: "IRANyekanBold";
+    padding-top: 5px;
+    font-size: 20px;
+}
+
+.settingItem{
+    border-right: 1px solid var(--site-pourple);
+    padding-right: 20px;
+}
+
+.settingItem h4::before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    display: flex;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid var(--site-pourple);
+    position: absolute;
+    top: 10px;
+    right: -29px;
+}
+
+.hourTime input{
+    max-width: 100%;
+    background-color: #faf9f4;
+    box-shadow: inset 0px 2px 15px #00000029;
+    text-align: center;
+    padding: 5px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    border-radius: 30px;
+    color: #C0C3C8;
+}
+
+.hourTime label{
+    padding-bottom: 6px;
+    color: var(--stie-high-gray);
+    text-align: center;
+    font-size: 21px;
+}
+
+.toggleicon{
+    visibility: hidden;
+}
+
+.singleDayTime{
+    font-family: "IRANyekanBold";
+    color: var(--stie-high-gray);
+}
+
+/* /////////////////////////////////// end of isntagram post page */
+
+
 
 
 
