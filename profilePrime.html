@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/styleDependency.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>ثبت نام | time1</title>
+    <title>پروفایل | time1</title>
 </head>
 
 <body onload="startTime()">
@@ -132,7 +132,7 @@
                         </div>
 
                         <div class="menuItemWrapper">
-                            <a class="nav-inner" href="">ارتباط با ماط</a>
+                            <a class="nav-inner" href="">ارتباط با ما</a>
                             <div class="menuLine"></div>
                         </div>
                     </div>
@@ -143,45 +143,92 @@
 
                 <!--------------------------- content -->
                 <div class="col-md-10">
-                    <div class="FormsWrapper p-2 mb-5">
+                    <div class="FormsWrapper pt-3 px-3 mb-5">
 
-                        <div class="codeAcceptWrapper">
-                            <div class="codeAccept">
-                                <h4 class="text-white text-center">ثبت مشخصات</h4>
-                                <form action="" method="">
-                                    <div class="row py-4">
-                                        <div class="col-md-6">
-                                            <div class="smsForm singupForm">
+                        <section class="profilePrimeWrapper">
+                            <div class="buyPrime">
+                                <div class="row">
 
-                                                <label class="text-white text-right" for="number">شماره همراه</label>
-                                                <input class="form-control text-left mb-4" type="number"
-                                                    placeholder="+98" id="number" name="">
+                                    <div class="col-md-4 pb-4 pb-md-0">
+                                        <label class="primeWrapper primeWrapperDifferent" for="test1">
+                                            <div class="primeInner text-center">
+                                                <p class="pb-5 m-0 text-white">
+                                                    اشتراک 1<br>
+                                                    ماهه
+                                                </p>
+                                                <h4>50 000 تومان</h4>
+                                            </div>
+                                        </label>
+                                        <input class="d-none" type="radio" id="test1" name="buy">
+                                    </div>
 
-                                                <label class="text-white text-right" for="username">نام کاربری</label>
-                                                <input class="form-control mb-4" type="text" placeholder="username"
-                                                    id="username" name="">
+                                    <div class="col-md-4 pb-4 pb-md-0">
+                                        <label class="primeWrapper" for="test2">
+                                            <div class="primeInner text-center">
+                                                <p class="pb-2 m-0">
+                                                    اشتراک 6<br>
+                                                    ماهه
+                                                </p>
+                                                <h4 class="mb-1">50 000 تومان</h4>
+                                                <h4 class="oldPrice"><strike>60 000 تومان</strike></h4>
+                                                <div class="primeOff">10% off</div>
+                                            </div>
+                                        </label>
+                                        <input class="d-none" type="radio" id="test2" name="buy">
+                                    </div>
 
-                                                <label class="text-white text-right" for="password">کلمه عبور</label>
-                                                <input class="form-control text-left mb-4" type=""
-                                                    placeholder="********" id="password" name="">
+                                    <div class="col-md-4 pb-4 pb-md-0">
+                                        <label class="primeWrapper" for="test3">
+                                            <div class="primeInner text-center">
+                                                <p class="pb-2 m-0">
+                                                    اشتراک 1<br>
+                                                    ساله
+                                                </p>
+                                                <h4 class="mb-1">120 000 تومان</h4>
+                                                <h4 class="oldPrice"><strike>90 000 تومان</strike></h4>
+                                                <div class="primeOff">20% off</div>
+                                            </div>
+                                        </label>
+                                        <input class="d-none" type="radio" id="test3" name="buy">
+                                    </div>
 
-                                                <label class="text-white text-right" for="">تکرار کلمه عبور</label>
-                                                <input class="form-control text-left mb-4" type="password"
-                                                    placeholder="********" id="password" name="">
+                                    <div class="col-12 pt-4">
+                                        <p class="primeCounter">از اشتراک شما 1 ماه باقی مانده است.</p>
+                                    </div>
 
-                                                <button class="btn btn-dark formSubmit mt-4">ثبت</button>
+                                </div>
+                            </div>
+
+                            <div class="editProfile pt-5">
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-md-3 d-flex justify-content-center align-items-center pb-5 pm-md-0">
+                                            <div class="profilePicture">
+                                                <img src="images/profilePic.jpg" alt="">
                                             </div>
                                         </div>
-                                        <div class="col-md-6 d-flex justify-content-center align-items-center">
-                                            <div class="text-center">
-                                                <img class="p-1 p-md-5" src="images/pc.png" alt="">
+                                        <div class="col-md-3 pb-5 pm-md-0">
+                                            <div class="editInputWrapper">
+                                                <input class="form-control mb-4 text-center" type="text" placeholder="نام" id="" name="">
+                                                <input class="form-control mb-4 text-center" type="text" placeholder="آیدی اینساگرام" id="" name="">
+                                                <input class="form-control mb-4 text-center" type="text" placeholder="رمز عبور اینساگرام" id="" name="">
+                                                <button class="btn btn-dark mt-4">اعمال تغییرات</button>
                                             </div>
+                                        </div>
+                                        <div class="col-md-3 d-flex justify-content-center align-items-center pb-5 pm-md-0">
+                                            <a href="" class="text-decoration-none h2">
+                                                <div class="editCalenderFromProfile text-center d-flex justify-content-center align-items-center">
+                                                    ویرایش<br>تقویم
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 pb-5 pm-md-0">
+                                            <img src="images/analys.png" alt="">
                                         </div>
                                     </div>
                                 </form>
-
                             </div>
-                        </div>
+                        </section>
 
                     </div>
                 </div>

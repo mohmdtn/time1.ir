@@ -13,6 +13,11 @@
     src: url('fonts/iranyekanwebregularfanum.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'IRANyekanBold';
+    src: url('fonts/IRANYekanMobileExtraBold.ttf') format('truetype');
+}
+
 
 body, html {
     padding: 0;
@@ -547,6 +552,7 @@ header, .headContent{
     padding-left: 4px;
     padding-bottom: 2px;
     transition: .2s;
+    margin: 0 auto;
 }
 
 .FormsWrapper form input::placeholder{
@@ -915,6 +921,19 @@ header, .headContent{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* /////////////////////////////////// calculate age page */
 
 .ageResult{
@@ -943,6 +962,184 @@ header, .headContent{
 }
 
 /* /////////////////////////////////// end of calculate age page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* /////////////////////////////////// profile prime page */
+
+.primeWrapper{
+    direction: ltr;
+    border-radius: 20px;
+    padding: 10px 13px;
+    background-color: #F8F8F8;
+    box-shadow: inset 0px 0px 14px #00000029;
+    height: 100%;
+    transition: .5s;
+    display: block;
+}
+
+.primeWrapper:hover{
+    transform: scale(.9);
+    box-shadow: inset 0px 0px 14px #00000029, 0px 11px 20px 0px #00000029;
+    cursor: pointer;
+}
+
+.primeWrapperDifferent{
+    background-color: var(--site-pourple);
+    color: #fff;
+}
+
+.primeInner{
+    border: 1px solid #5568F2;
+    padding: 10px;
+    border-radius: 20px;
+    position: relative;
+    height: 100%;
+}
+
+.primeWrapperDifferent .primeInner{
+    border: 1px solid #323846;
+}
+
+.primeInner h4{
+    font-family: "IRANyekanBold";
+    font-weight: bolder;
+    color: var(--site-pourple);
+    font-size: 29px;
+}
+
+.primeInner p{
+    line-height: 1.8;
+    font-weight: bold;
+    color: var(--stie-high-gray);
+}
+
+.primeWrapperDifferent h4{
+    color: #fff;
+}
+
+.oldPrice{
+    color: #C0C3C8 !important;
+}
+
+.primeOff{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-family: "IRANyekanBold";
+    background-color: var(--site-pourple);
+    color: #fff;
+    border-radius: 0 20px 0 20px;
+    padding: 6px 12px;
+}
+
+.primeCounter{
+    font-family: "IRANyekanBold";
+    color: var(--stie-high-gray);
+    font-size: 30px
+}
+
+/* ///////////////// edit profile section */
+
+.editProfile{
+    border-top: 2px dashed #ddd;
+}
+
+.profilePicture{
+    border-radius: 50%;
+    border: 1px solid var(--site-pourple);
+    text-align: center;
+    overflow: hidden;
+    width: 160px;
+}
+
+.profilePicture img{
+    max-width: 100%;
+}
+
+.editInputWrapper button{
+    width: 100%;
+    font-family: "IRANyekanBold";
+    padding: 5px;
+    background-color: var(--site-pourple);
+    font-size: 16px;
+    border: 0;
+}
+
+.editCalenderFromProfile{
+    background-color: var(--site-pourple);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    color: #fff;
+    font-family: "IRANyekanBold";
+    transition: .3s;
+}
+
+.editCalenderFromProfile:hover{
+    border: 3px solid var(--site-pourple);
+    background-color: #fff;
+    color: var(--site-pourple);
+    box-shadow: 0px 56px 92px #00000056;
+    font-size: 37px;
+    animation: fontSize .3s alternate infinite;
+}
+
+@keyframes fontSize {
+    0%{
+        transform: rotate(-3deg);
+    }
+    20%{
+        transform: rotate(3deg);
+    }
+    40%{
+        transform: rotate(-3deg);
+    }
+    80%{
+        transform: rotate(3deg);
+    }
+    100%{
+        transform: rotate(3deg);
+    }
+}
+
+/* ///////////////// buy prime page */
+
+.buyPrimeNow h2{
+    color: var(--stie-high-gray);
+    font-family: "IRANyekanBold";
+}
+
+.buyPrimeNow button{
+    font-family: "IRANyekanBold";
+    padding: 10px 35px;
+    background-color: var(--site-pourple);
+    font-size: 23px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0px 32px 30px #5568F221;
+}
+
+.titleLine{
+    width: 53%;
+    height: 2px;
+    background-color: #ddd;
+}
+
+/* /////////////////////////////////// end of profile prime page */
 
 
 
@@ -1081,6 +1278,13 @@ header, .headContent{
     .loginForm, .singUpForm{
         padding: 10px 30px 60px 30px;
     }
+
+    /* /////////// profile prime */
+    .primeOff{
+        padding: 6px 5px;
+        font-size: 10px;
+    }
+    /* \\\\\\\\\\\ end of profile prime */  
 }
 
 @media screen and (max-width: 992px){
@@ -1145,7 +1349,7 @@ header, .headContent{
         width: 0;
         display: none;
         visibility: hidden;
-        z-index: 5;
+        z-index: 6;
     }
 
 
@@ -1211,6 +1415,13 @@ header, .headContent{
         padding-bottom: 5px;
     }
     /* \\\\\\\\\\\ end age page */
+
+
+    /* /////////// profile prime */
+    .primeCounter{
+        font-size: 22px;
+    }
+    /* \\\\\\\\\\\ end of profile prime */
 
 }
 
