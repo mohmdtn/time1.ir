@@ -219,7 +219,7 @@ header, .headContent{
     z-index: 5;
     border-radius: 19px;
     font-size: 21px;
-    padding: 3px 5px;
+    padding: 3px 9px;
     border: 2px solid var(--site-pourple);
     line-height: 1;
     position: absolute;
@@ -389,6 +389,18 @@ header, .headContent{
     display: block;
     width: 70%;
     margin: 0 auto;
+    transition: .3s;
+}
+
+.calenderBodyBody div span:hover{
+    box-shadow: 0px 20px 34px #00000029;
+    outline: 3px solid var(--site-pourple);
+    cursor: pointer;
+}
+
+.addForReminder{
+    box-shadow: 0px 20px 34px #00000029;
+    outline: 3px solid var(--site-pourple);
 }
 
 .calenderBodyBody div span.curentDay{
@@ -454,19 +466,112 @@ header, .headContent{
     font-weight: bold;
 }
 
+.chooseDay{
+    background-color: var(--stie-high-gray);
+    border: 3px solid #384399;
+    text-align: center;
+    color: #fff;
+    padding: 5px;
+    display: block;
+    width: 100%;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+
+
+
+.reminders{
+    padding-left: 70px;
+}
+
+.singleReminder{
+    margin-bottom: 15px;
+    box-shadow: 0px 20px 34px #00000029;
+}
+
+.singleReminder h4{
+    display: inline-block;
+    padding-left: 10px;
+    font-weight: bolder;
+    color: var(--site-high-gray);
+}
+
+.singleReminder span{
+    color: var(--site-gray);
+    font-size: 14px;
+}
+
+.singleReminder{
+    border-radius: 20px 20px 20px 0;   
+}
 .comment{
     background-color: #fff;
     position: relative;
-    z-index: 5;
-
+    /* z-index: 5; */
+    border-radius: 20px 20px 20px 0;
 }
 
 .comment h4{
     background-color: var(--site-pourple);
     color: #fff;
     padding: 10px;
+    margin-bottom: 0;
+    border-radius: 0 20px 20px 0;
+    width: 115px;
+    font-size: 20px;
+    text-align: center;
 }
 
+.commentInput{
+    width: calc(100% - 130px);
+}
+
+.commentInput input{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.commentInput input:focus{
+    box-shadow: none;
+}
+
+.addReminderInner{
+    background-color: var(--site-pourple);
+    color: #fff;
+    border-radius: 17px;
+    box-shadow: 0px 20px 34px #00000029;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 31px;
+    width: 55px;
+    height: 55px;
+    border: 5px solid var(--site-pourple);
+    transition: .3s;
+}
+
+.addReminderInner:hover{
+    box-shadow: 0px 20px 34px #00000083;
+    border: 5px solid var(--site-pourple);
+    background-color: #fff;
+    color: var(--site-pourple);
+    cursor: pointer;
+}
+
+.addReminderInner:hover i{
+    animation: shake .3s alternate infinite;
+}
+
+@keyframes shake {
+    0%{
+        transform: scale(.8);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
 
 /* //////////////////////////////// end of calender */
 
@@ -1178,6 +1283,7 @@ header, .headContent{
 
 .type{
     padding: 0 10px;
+    height: 140px;
 }
 
 .typeInner{
@@ -1228,12 +1334,6 @@ header, .headContent{
     color: var(--site-pourple);
     padding-left: 6px;
 }
-
-/* .timeHead input[type="checkbox"]{
-    border: none;
-    padding: 5px;
-    box-shadow: 0px 30px 42px #2C2C2C26;
-} */
 
 .dayTime h4 , .hourTime h4{
     color: var(--site-pourple);
@@ -1293,6 +1393,41 @@ header, .headContent{
     color: var(--stie-high-gray);
 }
 
+
+.postOutputInner, .storyOutputInner{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+.postOutputInner{
+    aspect-ratio: 1 / 1;
+}
+
+.storyOutputInner{
+    display: none;
+    aspect-ratio: 9 / 16;
+    width: 70%;
+}
+
+.postOutputInner .draggable, .storyOutputInner .draggable{
+    width: 150px;
+    max-width: 250px;
+    text-align: center;
+    cursor: move;
+    transition: outline .3s;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.postOutputInner .draggable:hover, .storyOutputInner .draggable:hover{
+    box-shadow: 0px 30px 42px #2C2C2C26;
+    outline: 9px solid #5567f296;
+}
+
+
 /* /////////////////////////////////// end of isntagram post page */
 
 
@@ -1316,13 +1451,18 @@ header, .headContent{
 /* //////////////////////////////// footer */
 
 .logoFooter{
-    background-color: var(--site-pourple);
+    background-color: var(--site-soft-gray);
     padding: 5px;
     line-height: 1;
-    border-radius: 35px;
+    border-radius: 55px;
     color: #fff;
     text-align: center;
     font-size: 60px;
+    border: 4px solid var(--site-pourple);
+}
+
+.logoFooter img{
+    max-width: 80%;
 }
 
 .socialMedia a{
@@ -1435,6 +1575,11 @@ header, .headContent{
         padding: 10px 30px 60px 30px;
     }
 
+        
+    .reminders{
+        padding: 0;
+    }
+
     /* /////////// profile prime */
     .primeOff{
         padding: 6px 5px;
@@ -1515,6 +1660,19 @@ header, .headContent{
         position: relative;
         display: flex !important;
         z-index: 4;
+    }
+    
+    .dailyTimeSetting{
+        padding-right: 0;
+    }
+
+    .comment h4 {
+        font-size: 15px;
+        width: 90px;
+    }
+
+    .commentInput {
+        width: calc(100% - 106px);
     }
 
     /* /////////// code page */
@@ -1597,6 +1755,10 @@ header, .headContent{
         font-size: 32px;
     }
 
+    .typeWrapper h2{
+        padding-left: 0;
+    }
+
 }
 
 
@@ -1610,6 +1772,10 @@ header, .headContent{
     }
     .calenderSingleText h4{
         font-size: 19px;
+    }
+
+    .calenderHeader h3 {
+        font-size: 18px;
     }
 
     /* /////////// month contact us page */

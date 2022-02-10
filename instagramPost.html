@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="packages/fontawsome-5.13.0/all.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/styleDependency.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -91,7 +92,7 @@
                 <!--------------------------- side menu -->
                 <div class="col-md-2 pb-5 pb-md-0 d-flex justify-content-center d-flex">
                     <div class="watchBand d-none d-md-flex align-items-center justify-content-center">
-                        <div class="headLogo d-none d-md-block">time1</div>
+                        <div class="headLogo d-none d-md-block"><img src="images/logo.png" alt=""></div>
                         <div class="watchDisplay">
                             <span class="hourTimer">12</span> <br>
                             <span class="blink">:</span> <span class="minuteTimer">12</span>
@@ -147,14 +148,14 @@
                         <div class="typeWrapper d-flex align-items-start flex-row">
                             <h2>نوع</h2>
                             <div class="type">
-                                <div class="typeInner curentType">
+                                <div class="typeInner instagramStory">
                                     برای<br>استوری
                                     <span></span>
                                 </div>
                             </div>
 
                             <div class="type">
-                                <div class="typeInner">
+                                <div class="typeInner curentType instagramPost">
                                     برای<br>پست
                                     <span></span>
                                 </div>
@@ -163,7 +164,7 @@
 
                         <div class="instagramSection pt-5">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-7">
                                     <div class="dailyTimeSetting">
 
                                         <div
@@ -227,17 +228,17 @@
                                         <div class="hourTime settingItem pt-5">
                                             <h4 class="pb-4">ساعت</h4>
                                             <div class="row align-items-end">
-                                                <div class="col-4 singleDayTime d-flex flex-column">
+                                                <div class="col-sm-4 singleDayTime d-flex flex-column pb-3 pb-md-0">
                                                     <label for="">دقیقه</label>
-                                                    <input type="text">
+                                                    <input type="text" maxlength="2">
                                                 </div>
 
-                                                <div class="col-4 singleDayTime d-flex flex-column">
+                                                <div class="col-sm-4 singleDayTime d-flex flex-column pb-3 pb-md-0">
                                                     <label for="">ساعت</label>
-                                                    <input type="text">
+                                                    <input type="text" maxlength="2">
                                                 </div>
 
-                                                <div class="col-4 singleDayTime d-flex flex-column">
+                                                <div class="col-sm-4 singleDayTime d-flex flex-column pb-3 pb-md-0">
                                                     <div class="d-flex justify-content-center align-items-center">
                                                         <p class="m-0 px-1">PM</p>
                                                         <div class="dayAndNightWrapper">
@@ -272,15 +273,38 @@
                                             </div>
                                         </div>
 
-                                        <div class="hourTime settingItem pt-5">
+                                        <div class="hourTime settingItem pt-5 d-none d-md-block">
                                             <h4 class="m-0">تاریخ</h4>
                                         </div>
 
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <!-- this scripts should be here for working JQ ui -->
+                                <script src="js/jquery-3.5.1.min.js"></script>
+                                <script src="js/jquery-ui.min.js"></script>
+                                <script>
+                                    $(function () {
+                                        $(".draggable").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", aspectRatio: 1 / 1 });
+                                    });
+                                </script>
+                                <div class="col-md-5">
+
                                     <div class="postOutput">
+                                        <div class="postOutputInner" style="background-image: url(images/calenderBg.png);">
+                                            <div class="draggable" style="left: 0;"><img src="images/manCalender.png" alt=""></div>
+                                            <div class="draggable" ><img src="images/analys.png" alt=""></div>
+                                            <div class="draggable" style="left: 30%;"><img src="images/logo.png" alt=""></div>
+                                        </div>
                                     </div>
+
+                                    <div class="storyOutput">
+                                        <div class="storyOutputInner" style="background-image: url(images/storyBg.jpg);">
+                                            <div class="draggable" style="left: 0;"><img src="images/manCalender.png" alt=""></div>
+                                            <div class="draggable" ><img src="images/analys.png" alt=""></div>
+                                            <div class="draggable" style="left: 30%;"><img src="images/logo.png" alt=""></div>
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 <div class="col-12">
@@ -288,69 +312,71 @@
                                         <section class="calender py-5">
                                             <div class="row">
 
-                                                <section class="col-md-6">
-                                                    <div class="calenderText pl-5">
+                                                <section class="col-md-6 pb-4 pb-md-0">
+                                                    <div class="calenderText reminders">
                                                         <div class="calenderTextInner">
 
-                                                            <div class="calenderSingleText">
-                                                                <h4>1 دی</h4>
-                                                                <span>روز میلاد خورشید؛ جشن خرم روز، نخستین جشن
-                                                                    دیگان</span>
-                                                            </div>
-
-                                                            <div class="calenderSingleText">
-                                                                <h4>1 دی</h4>
-                                                                <span>روز میلاد خورشید؛ جشن خرم روز، نخستین جشن
-                                                                    دیگان</span>
-                                                            </div>
-
-                                                            <div class="calenderSingleText calenderTextHoliday">
-                                                                <h4>1 دی</h4>
-                                                                <span>روز میلاد خورشید؛ جشن خرم روز، نخستین جشن
-                                                                    دیگان</span>
-                                                            </div>
-
-                                                            <div class="calenderSingleText">
-                                                                <h4>1 دی</h4>
-                                                                <span>روز میلاد خورشید؛ جشن خرم روز، نخستین جشن
-                                                                    دیگان</span>
-                                                            </div>
-
-                                                            <div class="calenderSingleText">
-                                                                <h4>1 دی</h4>
-                                                                <span>روز میلاد خورشید؛ جشن خرم روز، نخستین جشن
-                                                                    دیگان</span>
-                                                            </div>
-
-                                                            <div class="calenderSingleText">
-                                                                <h4>1 دی</h4>
-                                                                <span>روز میلاد خورشید؛ جشن خرم روز، نخستین جشن
-                                                                    دیگان</span>
-                                                            </div>
-
-                                                            <div class="calenderSingleText calenderTextHoliday">
-                                                                <h4>1 دی</h4>
-                                                                <span>روز میلاد خورشید؛ جشن خرم روز، نخستین جشن
-                                                                    دیگان</span>
-                                                            </div>
-
-                                                            <div class="calenderSingleText">
-                                                                <h4>1 دی</h4>
-                                                                <span>روز میلاد خورشید؛ جشن خرم روز، نخستین جشن
-                                                                    دیگان</span>
-                                                            </div>
-
-                                                            <div class="calenderSingleText">
-                                                                <h4>1 دی</h4>
-                                                                <span>روز میلاد خورشید؛ جشن خرم روز، نخستین جشن
-                                                                    دیگان</span>
-                                                            </div>
-
-                                                            <div class="calenderSingleText">
+                                                            <div class="singleReminder">
                                                                 <div class="comment">
                                                                     <h4>1 دی</h4>
-                                                                    <span>روز میلاد خورشید؛ جشن خرم روز، نخستین جشن
-                                                                        دیگان</span>
+                                                                    <span>تولد مادرم</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="singleReminder">
+                                                                <div class="comment">
+                                                                    <h4>27 دی</h4>
+                                                                    <span>تولد همسرم</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="singleReminder">
+                                                                <div class="comment">
+                                                                    <h4>11 دی</h4>
+                                                                    <span>ازدواج برادرم</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="singleReminder">
+                                                                <div class="comment">
+                                                                    <h4>6 بهمن</h4>
+                                                                    <span>تولد دوستم</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="singleReminder">
+                                                                <div class="comment">
+                                                                    <h4>12 بهمن</h4>
+                                                                    <span>قرار کاری</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="singleReminder">
+                                                                <div class="comment">
+                                                                    <h4>28 اسفند</h4>
+                                                                    <span>جلسه در شرکت</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="singleReminder">
+                                                                <div class="comment">
+                                                                    <h4>1 فروردین</h4>
+                                                                    <span>متن تستی</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- <div class="singleReminder">
+                                                                <div class="comment">
+                                                                    <h4>1 فروردین</h4>
+                                                                    <div class="d-inline-block commentInput">
+                                                                        <input class="col form-control" type="text" placeholder="متن...">
+                                                                    </div>
+                                                                </div>
+                                                            </div> -->
+
+                                                            <div class="addReminder">
+                                                                <div class="addReminderInner m-auto">
+                                                                    <i class="fas fa-plus"></i>
                                                                 </div>
                                                             </div>
 
@@ -370,7 +396,7 @@
                                                                     class="px-1 fas fa-angle-right"></i>
                                                             </span>
 
-                                                            <h3 class="mb-0">بهمن 1400</h3>
+                                                            <h3 class="mb-0"><span>بهمن</span> 1400</h3>
 
                                                             <span
                                                                 class="d-flex justify-content-between align-items-center">
@@ -428,13 +454,15 @@
                                                                 <div class="row">
 
                                                                     <div class="col p-0">
-                                                                        <div class="showToday btn btn-dark">نمایش امروز
+                                                                        <div class="showToday btn btn-dark">نمایش
+                                                                            یادآورها
                                                                         </div>
                                                                     </div>
 
-                                                                    <!-- <div class="col">
-                                                            <div class="btn btn-dark showToday">نمایش روز های تعطیل این ماه</div>
-                                                        </div> -->
+                                                                    <div class="col">
+                                                                        <div class="btn btn-dark chooseDay">انتخاب روز
+                                                                        </div>
+                                                                    </div>
 
                                                                 </div>
                                                             </div>
@@ -472,7 +500,7 @@
                         <div class="footerItemInner d-flex flex-column justify-content-between">
 
                             <div>
-                                <div class="logoFooter">time1</div>
+                                <div class="logoFooter"><img src="images/logo.png" alt=""></div>
 
                                 <div class="socialMedia py-3 d-flex justify-content-around">
                                     <a href=""><i class="fab fa-whatsapp"></i></a>
@@ -550,7 +578,6 @@
 
 </body>
 
-<script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/swiper-bundle.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/script.js"></script>
