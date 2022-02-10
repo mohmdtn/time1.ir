@@ -16,6 +16,7 @@ function startTime() {
   let h = today.getHours();
   let m = today.getMinutes();
   let s = today.getSeconds();
+  h = checkTime(h);
   m = checkTime(m);
   s = checkTime(s);
   document.getElementsByClassName('hourTimer')[0].innerHTML = h;
@@ -86,11 +87,65 @@ $(".instagramPost").click(function () {
   $(".postOutputInner").slideDown();
 });
 
-// $(window).resize(function () { 
-//   $(function () {
-//     $(".draggable").draggable({
-//       containment: "parent",
-//       stack: ".draggable",
-//     });
-//   });
-// });
+
+
+
+// add color to daily checkbox
+$(".singleDayTime>input").click(function () { 
+  $(this).siblings().toggleClass("dayLabelColor");
+
+});
+
+
+
+
+
+$(document).ready(function () {
+
+  var myModal = document.getElementById('myModal')
+  var myInput = document.getElementById('myInput')
+
+  myModal.addEventListener('shown.bs.modal', function () {
+    myInput.focus()
+  })
+
+
+
+  // var swiper = new Swiper('.swiper', {
+  //   navigation: {
+  //     nextEl: '.nextBtn1',
+  //     prevEl: '.prvBtn1',
+  //   },
+  //   slidesPerView: 1,
+  //   spaceBetween: 0,
+  //   // init: false,
+  //   autoplay: {
+  //     delay: 1000,
+  //     disableOnInteraction: false,
+  //   },
+  //   loop: true,
+  //   breakpoints: {
+  //     640: {
+  //       slidesPerView: 2,
+  //       spaceBetween: 0,
+  //     },
+  //     768: {
+  //       slidesPerView: 3,
+  //       spaceBetween: 0,
+  //     },
+  //     1024: {
+  //       slidesPerView: 3,
+  //       spaceBetween: 0,
+  //     },
+  //     1440: {
+  //       slidesPerView: 4,
+  //       spaceBetween: 0,
+  //     }
+  //   }
+  // });
+
+
+});
+
+
+

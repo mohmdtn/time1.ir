@@ -284,24 +284,32 @@
                                 <script src="js/jquery-ui.min.js"></script>
                                 <script>
                                     $(function () {
-                                        $(".draggable").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", aspectRatio: 1 / 1 });
+                                        $(".draggable").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", aspectRatio: "parent" });
                                     });
                                 </script>
                                 <div class="col-md-5">
 
                                     <div class="postOutput">
-                                        <div class="postOutputInner" style="background-image: url(images/calenderBg.png);">
+                                        <div class="changeBg position-relative">
+                                            <div class="changeBgInner" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">
+                                                پس زمینه
+                                            </div>
+                                        </div>
+                                        <div class="postOutputInner p-1" style="background-image: url(images/calenderBg.png);">
                                             <div class="draggable" style="left: 0;"><img src="images/manCalender.png" alt=""></div>
-                                            <div class="draggable" ><img src="images/analys.png" alt=""></div>
-                                            <div class="draggable" style="left: 30%;"><img src="images/logo.png" alt=""></div>
+                                            <div class="draggable"><img src="images/analys.png" alt=""></div>
+                                            <div class="draggable" style="left: 30%;"><img src="images/logo.png" alt="">
+                                            </div>
                                         </div>
                                     </div>
 
                                     <div class="storyOutput">
-                                        <div class="storyOutputInner" style="background-image: url(images/storyBg.jpg);">
+                                        <div class="storyOutputInner p-1" style="background-image: url(images/storyBg.jpg);">
                                             <div class="draggable" style="left: 0;"><img src="images/manCalender.png" alt=""></div>
-                                            <div class="draggable" ><img src="images/analys.png" alt=""></div>
-                                            <div class="draggable" style="left: 30%;"><img src="images/logo.png" alt=""></div>
+                                            <div class="draggable"><img src="images/analys.png" alt=""></div>
+                                            <div class="draggable" style="left: 30%;"><img src="images/logo.png" alt="">
+                                            </div>
                                         </div>
                                     </div>
 
@@ -484,6 +492,57 @@
         </section>
 
     </div>
+
+
+
+
+
+
+
+    <!---------------------------------- modal -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="container">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-body modalBody">
+
+                        <!-- <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">Slide 1</div>
+                              <div class="swiper-slide">Slide 2</div>
+                              <div class="swiper-slide">Slide 3</div>
+                              <div class="swiper-slide">Slide 4</div>
+                              <div class="swiper-slide">Slide 5</div>
+                              <div class="swiper-slide">Slide 6</div>
+                              <div class="swiper-slide">Slide 7</div>
+                              <div class="swiper-slide">Slide 8</div>
+                              <div class="swiper-slide">Slide 9</div>
+                            </div>
+                        </div>
+                        <script>
+                            var swiper = new Swiper(".mySwiper", {
+                              slidesPerView: 5,
+                              spaceBetween: 30,
+                              pagination: {
+                                el: ".swiper-pagination",
+                                clickable: true,
+                              },
+                            });
+                        </script> -->
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------------------------- end of modal -->
+
+
+
+
 
 
 
