@@ -1116,6 +1116,11 @@ header, .headContent{
     cursor: pointer;
 }
 
+.primeWrapperClicked{
+    transform: scale(.85);
+    box-shadow: inset 0px 0px 14px #00000029, 0px 11px 40px 0px #00000063;
+}
+
 .primeWrapperDifferent{
     background-color: var(--site-pourple);
     color: #fff;

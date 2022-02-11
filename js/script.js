@@ -131,15 +131,11 @@ $(document).ready(function () {
   });
 });
 
-
-// show image preview
-imgInp.onchange = evt => {
-  const [file] = imgInp.files
-  if (file) {
-      blah.src = URL.createObjectURL(file)
-      $(".imagePreview").slideDown();
-  }
-}
+// select prime package
+$(".primeWrapper").click(function () { 
+  $(this).addClass("primeWrapperClicked");
+  $(".primeWrapper").not(this).removeClass("primeWrapperClicked");
+});
 
 // change post background
 $(".slideInner>img").click(function () { 
@@ -157,3 +153,18 @@ $(".slideInner>img").click(function () {
 //   $(this).addClass("selectedBg");
 //   $(".slideInner").not(this).removeClass("selectedBg");
 // });
+
+
+
+// show image preview
+imgInp.onchange = evt => {
+  const [file] = imgInp.files
+  if (file) {
+      blah.src = URL.createObjectURL(file)
+      $(".imagePreview").slideDown();
+  }
+}
+
+
+
+
