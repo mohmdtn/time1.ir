@@ -10,7 +10,7 @@ $(document).ready(function () {
 
 
 
-
+// digital clock timer
 function startTime() {
   const today = new Date();
   let h = today.getHours();
@@ -31,13 +31,13 @@ function checkTime(i) {
 
 
 
-
+// menu show button
 $(".navbar-toggler").click(function (e) {
   $(".menuSide").toggleClass("openMenu");
   $(".menu-button").toggleClass("cross");
 });
 
-
+// decrease watch band after scroll
 $(document).scroll(function () {
   if (document.documentElement.scrollTop > 200) {
     $(".watchBand").addClass("sideBarScroll");
@@ -46,7 +46,6 @@ $(document).scroll(function () {
     $(".watchBand").removeClass("sideBarScroll")
   }
 });
-
 
 // story or post for instagram page
 $(".typeInner").click(function () {
@@ -61,7 +60,6 @@ $(".addReminderInner").click(function () {
   if (day == null) {
     day = $(".curentDay").html();
   }
-
   var ele = '<div class="singleReminder"><div class="comment"><h4>' + day + ' ' + month + '</h4><div class="d-inline-block commentInput"><input class="col form-control" type="text" placeholder="متن..."></div></div></div>';
   $(".addReminderInner").before(ele);
   $(".commentInput>input").focus();
@@ -73,79 +71,89 @@ $(".calenderBodyBody>div>span").click(function () {
   $(".calenderBodyBody>div>span").not(this).removeClass("addForReminder");
 });
 
+
+// show story output
 $(".instagramStory").click(function () {
-  // $(".postOutputInner").addClass("outputStory");
-  // $(".postOutputInner").removeClass("outputPost");
   $(".storyOutputInner").slideDown();
   $(".postOutputInner").slideUp("fast");
 });
-
+// show post output
 $(".instagramPost").click(function () {
-  // $(".postOutputInner").addClass("outputPost");
-  // $(".postOutputInner").removeClass("outputStory");
   $(".storyOutputInner").slideUp("fast");
   $(".postOutputInner").slideDown();
 });
 
 
-
-
 // add color to daily checkbox
-$(".singleDayTime>input").click(function () { 
+$(".singleDayTime>input").click(function () {
   $(this).siblings().toggleClass("dayLabelColor");
-
 });
 
 
 
 
-
+// slider setings
 $(document).ready(function () {
-
-  var myModal = document.getElementById('myModal')
-  var myInput = document.getElementById('myInput')
-
-  myModal.addEventListener('shown.bs.modal', function () {
-    myInput.focus()
-  })
-
-
-
-  // var swiper = new Swiper('.swiper', {
-  //   navigation: {
-  //     nextEl: '.nextBtn1',
-  //     prevEl: '.prvBtn1',
-  //   },
-  //   slidesPerView: 1,
-  //   spaceBetween: 0,
-  //   // init: false,
-  //   autoplay: {
-  //     delay: 1000,
-  //     disableOnInteraction: false,
-  //   },
-  //   loop: true,
-  //   breakpoints: {
-  //     640: {
-  //       slidesPerView: 2,
-  //       spaceBetween: 0,
-  //     },
-  //     768: {
-  //       slidesPerView: 3,
-  //       spaceBetween: 0,
-  //     },
-  //     1024: {
-  //       slidesPerView: 3,
-  //       spaceBetween: 0,
-  //     },
-  //     1440: {
-  //       slidesPerView: 4,
-  //       spaceBetween: 0,
-  //     }
-  //   }
-  // });
-
-
+  $(".modal").on('show.bs.modal', function () {
+    setTimeout(function () {
+      var swiper = new Swiper('.mySwiper', {
+        navigation: {
+          nextEl: '.nextBtn',
+          prevEl: '.prvBtn',
+        },
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        // loop: true,
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          1440: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          }
+        }
+      });
+    }, 500);
+  });
 });
 
 
+// show image preview
+imgInp.onchange = evt => {
+  const [file] = imgInp.files
+  if (file) {
+      blah.src = URL.createObjectURL(file)
+      $(".imagePreview").slideDown();
+  }
+}
 
+// change post background
+$(".slideInner>img").click(function () { 
+  var imageSrc = $(this).attr("src");
+
+  if ($(".postOutputInner").css("display") == "block"){
+    $(".postOutputInner").css({'background-image':'url('+ imageSrc +')'});
+  }
+  else{
+    $(".storyOutputInner").css({'background-image':'url('+ imageSrc +')'});
+  }
+});
+
+// $(".slideInner").click(function () { 
+//   $(this).addClass("selectedBg");
+//   $(".slideInner").not(this).removeClass("selectedBg");
+// });

@@ -1471,13 +1471,100 @@ header, .headContent{
 
 
 
-/* /////////////////////////////////// modal */
+/* /////////////////////////////////// modal and slider */
 
 .modal-content{
     border-radius: 20px;
 }
 
+.mySwiper {
+    overflow: hidden;
+}
 
+.mySwiper img {
+    width: 100%;
+}
+
+.slideInner{
+    background-color: var(--stie-high-gray);
+    text-align: center;
+    height: 180px;
+    width: 100%;
+    border: 3px solid var(--stie-high-gray);
+    border-radius: 12px;
+    overflow: hidden;
+    color: #fff;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slideInner:hover{
+    box-shadow: 0px 32px 30px #00000031;
+    transform: scale(.94);
+    cursor: pointer;
+}
+
+.selectedBg{
+    box-shadow: 0px 32px 30px #00000036;
+    transform: scale(.89);
+    border: 6px solid var(--site-pourple);
+}
+
+.nextPrv div{
+    background-color: var(--stie-high-gray);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.nextPrv div i{
+    font-size: 31px;
+    transition: .3s;
+}
+
+.nextPrv div:hover i{
+    transform: scale(1.3);
+}
+
+.modalBody h4{
+    font-family: "IRANyekan";
+    font-weight: bold;
+    color: var(--site-pourple);
+    padding-bottom: 25px;
+    transition: .3s;
+}
+
+.modalBody form h4:hover{
+    cursor: pointer;
+    color: var(--stie-high-gray);
+}
+
+.imagePreview{
+    display: none;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.imagePreview img{
+    border: 3px solid var(--site-pourple);
+    background-color: var(--site-pourple);
+    border-radius: 10px;
+}
+
+.imagePreview button{
+    margin-top: 15px;
+    background-color: var(--site-pourple);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 20px 92px #00000029;
+}
 
 /* /////////////////////////////////// end of isntagram post page */
 
