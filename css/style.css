@@ -1493,8 +1493,8 @@ header, .headContent{
 .slideInner{
     background-color: var(--stie-high-gray);
     text-align: center;
-    height: 180px;
     width: 100%;
+    aspect-ratio: 1 / 1;
     border: 3px solid var(--stie-high-gray);
     border-radius: 12px;
     overflow: hidden;
@@ -1783,7 +1783,7 @@ header, .headContent{
         width: 100%;
         top: 0;
         left: 0;
-        z-index: 7;
+        z-index: 10;
         background: #faf9f4;
     }
 
@@ -1793,7 +1793,7 @@ header, .headContent{
         width: 0;
         display: none;
         visibility: hidden;
-        z-index: 6;
+        z-index: 9;
     }
 
 
