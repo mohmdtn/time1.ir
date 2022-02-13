@@ -1419,9 +1419,12 @@ header, .headContent{
 }
 
 .storyOutputInner{
-    display: none;
     aspect-ratio: 9 / 16;
     width: 80%;
+}
+
+.storyOutputWrapper{
+    display: none;
 }
 
 .postOutputInner .draggable, .storyOutputInner .draggable{

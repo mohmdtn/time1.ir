@@ -74,13 +74,13 @@ $(".calenderBodyBody>div>span").click(function () {
 
 // show story output
 $(".instagramStory").click(function () {
-  $(".storyOutputInner").slideDown();
-  $(".postOutputInner").slideUp("fast");
+  $(".storyOutputWrapper").slideDown();
+  $(".postOutputWrapper").slideUp("fast");
 });
 // show post output
 $(".instagramPost").click(function () {
-  $(".storyOutputInner").slideUp("fast");
-  $(".postOutputInner").slideDown();
+  $(".storyOutputWrapper").slideUp("fast");
+  $(".postOutputWrapper").slideDown();
 });
 
 
@@ -141,7 +141,7 @@ $(".primeWrapper").click(function () {
 $(".slideInner>img").click(function () { 
   var imageSrc = $(this).attr("src");
 
-  if ($(".postOutputInner").css("display") == "block"){
+  if ($(".postOutputWrapper").css("display") == "block"){
     $(".postOutputInner").css({'background-image':'url('+ imageSrc +')'});
   }
   else{
