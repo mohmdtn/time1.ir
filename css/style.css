@@ -1354,7 +1354,6 @@ header, .headContent{
 
 .dayLabelColor{
     color: var(--site-pourple);
-    box-shadow: 0px 30px 42px #2C2C2C26;
     transition: .4s;
 }
 
