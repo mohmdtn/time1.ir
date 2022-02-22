@@ -103,11 +103,10 @@ $(document).ready(function () {
         },
         slidesPerView: 1,
         spaceBetween: 10,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        // loop: true,
+        // autoplay: {
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // },
         breakpoints: {
           640: {
             slidesPerView: 2,
@@ -132,20 +131,31 @@ $(document).ready(function () {
 });
 
 // select prime package
-$(".primeWrapper").click(function () { 
+$(".primeWrapper").click(function () {
   $(this).addClass("primeWrapperClicked");
   $(".primeWrapper").not(this).removeClass("primeWrapperClicked");
 });
 
 // change post background
-$(".slideInner>img").click(function () { 
+$(".postSliderWrapper .swiper-wrapper .slideInner img").click(function () {
   var imageSrc = $(this).attr("src");
+  $(".postOutputInner").css({ 'background-image': 'url(' + imageSrc + ')' });
+});
 
-  if ($(".postOutputWrapper").css("display") == "block"){
-    $(".postOutputInner").css({'background-image':'url('+ imageSrc +')'});
+$(".storySliderWrapper .swiper-wrapper .slideInner img").click(function () {
+  var imageSrc = $(this).attr("src");
+  $(".storyOutputInner").css({ 'background-image': 'url(' + imageSrc + ')' });
+});
+
+$(".changeBgInner").click(function () { 
+  if ($(".postOutputWrapper").css("display") == "block") {
+    $(".postSliderWrapper").slideDown();
+    $(".storySliderWrapper").slideUp();
+
   }
-  else{
-    $(".storyOutputInner").css({'background-image':'url('+ imageSrc +')'});
+  else {
+    $(".storySliderWrapper").slideDown();
+    $(".postSliderWrapper").slideUp();
   }
 });
 
@@ -156,12 +166,80 @@ $(".slideInner>img").click(function () {
 
 
 
+
+$(".testest").click(function () {
+
+  // get weekdays input value
+  var selected = [];
+  $('input[name="weekdays"]:checked').each(function () {
+    selected.push($(this).attr('value'));
+  });
+
+  console.log("days= " + selected);
+
+
+  // get hour and minute and am pm
+  var hour = $('input[name="hour"]').val();
+  var minute = $('input[name="minute"]').val();
+  //
+  var dayOrNight = $("input[name='dayNight']:checked").val();
+  var finalAmPm;
+  dayOrNight == "am" ? finalAmPm = "am" : finalAmPm = "pm";
+
+  console.log("hour=" + hour + " minute=" + minute + finalAmPm)
+
+
+  // get dragable info
+  $(".postOutputInner").children().each(function(){
+    var items = this;
+    var postHeight = $(this).height();
+    var postWidth = $(this).width();
+    var PostTop = $(this).css("top");
+    var postLeft = $(this).css("left");
+    var postBackground = $(".postOutputInner").css("background-image");
+    // var src = $(this).children().attr("src");
+
+    var items2 = [];
+    
+    items2.push("post height=>" + postHeight + " post width=>" + postWidth + " post top=>" + PostTop + " post left=>" + postLeft + " post bg=>" + postBackground);
+    console.log(JSON.stringify(items2));
+
+  });
+  var postBackground = $(".postOutputInner").css("background-image");
+  var postbBgHeight = $(".postOutputInner").css("height");
+  var postBgWidth = $(".postOutputInner").css("width");
+  console.log("post bg=>" + postBackground + " post bg width=>" + postbBgHeight + " post bg height=>" + postBgWidth);
+
+
+
+  $(".storyOutputInner").children().each(function(){
+    var items = this;
+    var storyHeight = $(this).height();
+    var storyWidth = $(this).width();
+    var storyTop = $(this).css("top");
+    var storyLeft = $(this).css("left");
+    // var src = $(this).children().attr("src");
+
+    var items2 = [];
+
+    items2.push("story height=>" + storyHeight + " story width=>" + storyWidth + " story top=>" + storyTop);
+    console.log(JSON.stringify(items2));
+
+  });
+  var storyBackground = $(".storyOutputInner").css("background-image");
+  var storybBgHeight = $(".storyOutputInner").css("height");
+  var storyBgWidth = $(".storyOutputInner").css("width");
+  console.log("story bg=>" + storyBackground + " story bg width=>" + storyBgWidth + " story bg height=>" + storybBgHeight);
+
+});
+
+
 // show image preview
 imgInp.onchange = evt => {
   const [file] = imgInp.files
   if (file) {
-      blah.src = URL.createObjectURL(file)
-      $(".imagePreview").slideDown();
+    blah.src = URL.createObjectURL(file)
+    $(".imagePreview").slideDown();
   }
 }
 

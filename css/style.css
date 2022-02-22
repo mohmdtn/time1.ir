@@ -1417,9 +1417,12 @@ header, .headContent{
     aspect-ratio: 1 / 1;
 }
 
+.storyOutput{
+    width: 80%;
+    margin: 0 auto;
+}
 .storyOutputInner{
     aspect-ratio: 9 / 16;
-    width: 80%;
 }
 
 .storyOutputWrapper{
@@ -1496,7 +1499,6 @@ header, .headContent{
     background-color: var(--stie-high-gray);
     text-align: center;
     width: 100%;
-    aspect-ratio: 1 / 1;
     border: 3px solid var(--stie-high-gray);
     border-radius: 12px;
     overflow: hidden;
@@ -1505,6 +1507,14 @@ header, .headContent{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.postSliderWrapper .slideInner{
+    aspect-ratio: 1 / 1;
+}
+
+.storySliderWrapper .slideInner{
+    aspect-ratio: 9 / 16;
 }
 
 .slideInner:hover{
@@ -1574,9 +1584,6 @@ header, .headContent{
 }
 
 /* /////////////////////////////////// end of isntagram post page */
-
-
-
 
 
 
@@ -1827,7 +1834,7 @@ header, .headContent{
     .changeBgInner{
         position: relative;
         top: -15px;
-        left: 0;
+        left: -50px;
         text-align: left;
     }
 

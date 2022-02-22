@@ -171,8 +171,8 @@
                                             class="timeHead settingItem d-flex justify-content-between align-items-center">
                                             <h3>ترتیب گذاشتن</h3>
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <label for="">هر روز</label>
-                                                <input type="checkbox" name="" id="">
+                                                <label for="everyDay">هر روز</label>
+                                                <input type="checkbox" name="weekdays" id="everyDay" value="everyday">
                                             </div>
                                         </div>
 
@@ -180,46 +180,41 @@
                                             <h4 class="pb-4">روز</h4>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="singleDayTime d-flex flex-column">
-                                                    <input type="checkbox" name="" id="">
-                                                    <label for="">ش</label>
+                                                    <input type="checkbox" name="weekdays" id="saturday"
+                                                        value="saturday">
+                                                    <label for="saturday">ش</label>
                                                 </div>
 
                                                 <div class="singleDayTime d-flex flex-column">
-                                                    <input type="checkbox" name="" id="">
-                                                    <label for="">ی</label>
+                                                    <input type="checkbox" name="weekdays" id="sunday" value="sunday">
+                                                    <label for="sunday">ی</label>
                                                 </div>
 
                                                 <div class="singleDayTime d-flex flex-column">
-                                                    <input type="checkbox" name="" id="">
-                                                    <label for="">د</label>
+                                                    <input type="checkbox" name="weekdays" id="monday" value="monday">
+                                                    <label for="monday">د</label>
                                                 </div>
 
                                                 <div class="singleDayTime d-flex flex-column">
-                                                    <input type="checkbox" name="" id="">
-                                                    <label for="">س</label>
+                                                    <input type="checkbox" name="weekdays" id="tuesday" value="tuesday">
+                                                    <label for="tuesday">س</label>
                                                 </div>
 
                                                 <div class="singleDayTime d-flex flex-column">
-                                                    <input type="checkbox" name="" id="">
-                                                    <label for="">چ</label>
+                                                    <input type="checkbox" name="weekdays" id="wednesday"
+                                                        value="wednesday">
+                                                    <label for="wednesday">چ</label>
                                                 </div>
 
                                                 <div class="singleDayTime d-flex flex-column">
-                                                    <input type="checkbox" name="" id="">
-                                                    <label for="">پ</label>
+                                                    <input type="checkbox" name="weekdays" id="thursday"
+                                                        value="thursday">
+                                                    <label for="thursday">پ</label>
                                                 </div>
 
                                                 <div class="singleDayTime d-flex flex-column">
-                                                    <input type="checkbox" name="" id="">
-                                                    <label for="">ج</label>
-                                                    <!-- <div class="check">
-                                                        <div class="checkbox-container">
-                                                            <label class="checkbox-label">
-                                                                <input type="checkbox">
-                                                                <span class="mark"></span>
-                                                            </label>
-                                                        </div>
-                                                    </div> -->
+                                                    <input type="checkbox" name="weekdays" id="friday" value="friday">
+                                                    <label for="friday">ج</label>
                                                 </div>
                                             </div>
 
@@ -229,21 +224,21 @@
                                             <h4 class="pb-4">ساعت</h4>
                                             <div class="row align-items-end">
                                                 <div class="col-sm-4 singleDayTime d-flex flex-column pb-3 pb-md-0">
-                                                    <label for="">دقیقه</label>
-                                                    <input type="text" maxlength="2">
+                                                    <label for="">ساعت</label>
+                                                    <input type="text" name="hour" maxlength="2" value="1">
                                                 </div>
 
                                                 <div class="col-sm-4 singleDayTime d-flex flex-column pb-3 pb-md-0">
-                                                    <label for="">ساعت</label>
-                                                    <input type="text" maxlength="2">
+                                                    <label for="">دقیقه</label>
+                                                    <input type="text" name="minute" maxlength="2" value="00">
                                                 </div>
 
                                                 <div class="col-sm-4 singleDayTime d-flex flex-column pb-3 pb-md-0">
                                                     <div class="d-flex justify-content-center align-items-center">
-                                                        <p class="m-0 px-1">PM</p>
+                                                        <p class="m-0 px-1">AM</p>
                                                         <div class="dayAndNightWrapper">
                                                             <input class="day-night-switch" id="day-night"
-                                                                type="checkbox" />
+                                                                type="checkbox" name="dayNight" value="am" />
                                                             <label class="day-night-switch" for="day-night">
                                                                 <div class="celestial sun"></div>
                                                                 <div class="celestial moon">
@@ -267,7 +262,7 @@
                                                                 </div>
                                                             </label>
                                                         </div>
-                                                        <p class="m-0 px-1">AM</p>
+                                                        <p class="m-0 px-1">PM</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -292,19 +287,23 @@
 
                                     <div class="postOutput">
                                         <div class="changeBg position-relative">
-                                            <div class="changeBgInner" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <div class="changeBgInner" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">
                                                 پس زمینه
                                             </div>
                                         </div>
                                         <div class="postOutputWrapper">
                                             <div class="postOutputInner p-1"
-                                            style="background-image: url(images/calenderBg.png);">
-                                            <div class="draggable" style="left: 0;"><img src="images/manCalender.png"
-                                                    alt=""></div>
-                                            <div class="draggable"><img src="images/analys.png" alt=""></div>
-                                            <div class="draggable" style="left: 30%;"><img src="images/logo.png" alt="">
+                                                style="background-image: url(images/calenderBg.png);">
+                                                <div class="draggable" style="left: 0;"><img
+                                                        src="images/manCalender.png" alt=""></div>
+                                                <div class="draggable"><img src="images/analys.png" alt=""></div>
+                                                <div class="draggable" style="left: 30%;"><img src="images/logo.png"
+                                                        alt=""></div>
+                                                <div class="draggable" style="left: 30%;">
+                                                    <p style="font-size: inherit;">test1</p>
+                                                </div>
                                             </div>
-                                        </div>
                                         </div>
                                     </div>
 
@@ -312,17 +311,17 @@
                                         <div class="storyOutput">
                                             <div class="storyOutputInner p-1"
                                                 style="background-image: url(images/storyBg.jpg);">
-                                                <div class="draggable" style="left: 0;"><img src="images/manCalender.png"
-                                                        alt=""></div>
+                                                <div class="draggable" style="left: 0;"><img
+                                                        src="images/manCalender.png" alt=""></div>
                                                 <div class="draggable"><img src="images/analys.png" alt=""></div>
-                                                <div class="draggable" style="left: 30%;"><img src="images/logo.png" alt="">
-                                                </div>
+                                                <div class="draggable" style="left: 30%;"><img src="images/logo.png"
+                                                        alt=""></div>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
-
+                                <div class="testest btn btn-info">click</div>
                                 <div class="col-12">
                                     <section class="calenderWrapper py-5">
                                         <section class="calender py-5">
@@ -515,14 +514,58 @@
 
                 <div class="modal-body modalBody p-4">
                     <h4>پس زمینه های پیش فرض</h4>
-                    <div class="swiper mySwiper">
+                    <div class="swiper mySwiper postSliderWrapper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><div class="slideInner"><img src="images/storyBg.jpg" alt=""></div></div>
-                            <div class="swiper-slide"><div class="slideInner"><img src="images/calenderBg.png" alt=""></div></div>
-                            <div class="swiper-slide"><div class="slideInner"><img src="images/s21.jpg" alt=""></div></div>
-                            <div class="swiper-slide"><div class="slideInner">Slide 5</div></div>
-                            <div class="swiper-slide"><div class="slideInner">Slide 6</div></div>
-                            <div class="swiper-slide"><div class="slideInner">Slide 7</div></div>
+                            <div class="swiper-slide">
+                                <div class="slideInner"><img src="images/storyBg.jpg" alt=""></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slideInner"><img src="images/calenderBg.png" alt=""></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slideInner"><img src="images/s21.jpg" alt=""></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slideInner">Slide 5</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slideInner">Slide 6</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slideInner">Slide 7</div>
+                            </div>
+                        </div>
+                        <div class="nextPrv d-flex justify-content-center align-items-center">
+                            <div class="prvBtn">
+                                <i class="fas fa-angle-right"></i>
+                            </div>
+                            <div class="nextBtn">
+                                <i class="fas fa-angle-left"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper mySwiper storySliderWrapper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slideInner"><img src="images/storyBg.jpg" alt=""></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slideInner"><img src="images/calenderBg.png" alt=""></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slideInner"><img src="images/s21.jpg" alt=""></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slideInner">Slide 5</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slideInner">Slide 6</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slideInner">Slide 7</div>
+                            </div>
                         </div>
                         <div class="nextPrv d-flex justify-content-center align-items-center">
                             <div class="prvBtn">
@@ -535,7 +578,9 @@
                     </div>
 
                     <form action="">
-                        <label for="imgInp"><h4 class="pt-4">پس زمینه خود را آپلود کنید</h4></label>
+                        <label for="imgInp">
+                            <h4 class="pt-4">پس زمینه خود را آپلود کنید</h4>
+                        </label>
                         <input type="file" class="d-none" id="imgInp">
 
                         <div class="imagePreview">
