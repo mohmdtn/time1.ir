@@ -60,7 +60,7 @@ $(".addReminderInner").click(function () {
   if (day == null) {
     day = $(".curentDay").html();
   }
-  var ele = '<div class="singleReminder"><div class="comment"><h4>' + day + ' ' + month + '</h4><div class="d-inline-block commentInput"><input class="col form-control" type="text" placeholder="متن..."></div></div></div>';
+  var ele = '<div class="singleReminder"><div class="comment"><h4>' + day + ' ' + month + '</h4><div class="d-inline-block commentInput"><input class="col form-control" type="text" placeholder="متن..."></div><i class="fas fa-trash-alt reminderDelteBtn" title="حذف یادآور"></i></div></div>';
   $(".addReminderInner").before(ele);
   $(".commentInput>input").focus();
 });
@@ -147,7 +147,7 @@ $(".storySliderWrapper .swiper-wrapper .slideInner img").click(function () {
   $(".storyOutputInner").css({ 'background-image': 'url(' + imageSrc + ')' });
 });
 
-$(".changeBgInner").click(function () { 
+$(".changeBgInner").click(function () {
   if ($(".postOutputWrapper").css("display") == "block") {
     $(".postSliderWrapper").slideDown();
     $(".storySliderWrapper").slideUp();
@@ -174,64 +174,160 @@ $(".testest").click(function () {
   $('input[name="weekdays"]:checked').each(function () {
     selected.push($(this).attr('value'));
   });
-
-  console.log("days= " + selected);
-
-
   // get hour and minute and am pm
   var hour = $('input[name="hour"]').val();
   var minute = $('input[name="minute"]').val();
-  //
   var dayOrNight = $("input[name='dayNight']:checked").val();
   var finalAmPm;
   dayOrNight == "am" ? finalAmPm = "am" : finalAmPm = "pm";
 
-  console.log("hour=" + hour + " minute=" + minute + finalAmPm)
+  var timeConfig = { hour: hour, minute: minute, finalAmPm: finalAmPm, days: selected };
+  // console.log(timeConfig);
 
 
   // get dragable info
-  $(".postOutputInner").children().each(function(){
+  var postItems = [];
+  $(".postOutputInner").children().each(function () {
     var items = this;
-    var postHeight = $(this).height();
-    var postWidth = $(this).width();
+    var postHeight = $(this).css("height");
+    var postWidth = $(this).css("width");
     var PostTop = $(this).css("top");
     var postLeft = $(this).css("left");
-    var postBackground = $(".postOutputInner").css("background-image");
-    // var src = $(this).children().attr("src");
 
-    var items2 = [];
-    
-    items2.push("post height=>" + postHeight + " post width=>" + postWidth + " post top=>" + PostTop + " post left=>" + postLeft + " post bg=>" + postBackground);
-    console.log(JSON.stringify(items2));
-
+    postItems.push({ height: postHeight, width: postWidth, Top: PostTop, Left: postLeft });
   });
+
+  // console.log(postItems);
+
   var postBackground = $(".postOutputInner").css("background-image");
   var postbBgHeight = $(".postOutputInner").css("height");
   var postBgWidth = $(".postOutputInner").css("width");
-  console.log("post bg=>" + postBackground + " post bg width=>" + postbBgHeight + " post bg height=>" + postBgWidth);
+
+  var postWrapper = { postbg: postBackground, postBgWidth: postBgWidth, postBgHeight: postbBgHeight };
+  // console.log(postWrapper);
 
 
 
-  $(".storyOutputInner").children().each(function(){
+
+
+
+  var storyItems = [];
+  $(".storyOutputInner").children().each(function () {
     var items = this;
-    var storyHeight = $(this).height();
-    var storyWidth = $(this).width();
+    var storyHeight = $(this).css("height");
+    var storyWidth = $(this).css("width");
     var storyTop = $(this).css("top");
     var storyLeft = $(this).css("left");
-    // var src = $(this).children().attr("src");
 
-    var items2 = [];
+    // var items2 = [];
+    // items2.push("story height=>" + storyHeight + " story width=>" + storyWidth + " story top=>" + storyTop);
+    // console.log(JSON.stringify(items2));
 
-    items2.push("story height=>" + storyHeight + " story width=>" + storyWidth + " story top=>" + storyTop);
-    console.log(JSON.stringify(items2));
+    storyItems.push({ SIheight: storyHeight, SIwidth: storyWidth, SITop: storyTop, SILeft: storyLeft });
 
   });
   var storyBackground = $(".storyOutputInner").css("background-image");
   var storybBgHeight = $(".storyOutputInner").css("height");
   var storyBgWidth = $(".storyOutputInner").css("width");
-  console.log("story bg=>" + storyBackground + " story bg width=>" + storyBgWidth + " story bg height=>" + storybBgHeight);
+  var storyWrapper = { storybg: storyBackground, storyBgWidth: storybBgHeight, storyBgHeight: storyBgWidth };
+
+  // console.log(storyWrapper);
+  // console.log("story bg=>" + storyBackground + " story bg width=>" + storyBgWidth + " story bg height=>" + storybBgHeight);
+
+
+  var finalData = { timeConfig: timeConfig, postItems: postItems, postWrapper: postWrapper, storyItems: storyItems, storyWrapper: storyWrapper }
+
+  console.log(finalData);
+
+  $.ajax({
+    url: "test",
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify(finalData),
+    success: function (response) {
+      if (response.status) {
+        alert("تغییرات شما با موفقیت ذخیره شد.")
+      }
+      else {
+        alert("هنگام انجام عملیات مشکلی به وجود آمده..")
+      }
+    },
+    error: function () {
+      alert("خطا!! ارتباط برقرار نشد.")
+    }
+  });
 
 });
+
+
+
+
+
+// remove reminder
+$(document).on("click" , ".reminderDelteBtn" , function (){
+  $(this).parent().parent().remove();
+
+  // var reminderID = $(this);
+  // $.ajax({
+  //   url: "removeReminder",
+  //   type: "POST",
+  //   contentType: "application/json",
+  //   data: reminderID,
+  //   success: function (response) {
+  //     if (response.status) {
+  //       alert("یادآور با موفقیت حذف شد.")
+  //       $(this).parent().parent().remove()
+  //     }
+  //     else {
+  //       alert("هنگام انجام عملیات مشکلی به وجود آمده..")
+  //     }
+  //   },
+  //   error: function () {
+  //     alert("خطا!! ارتباط برقرار نشد.")
+  //   }
+  // });
+  
+});
+
+
+
+
+
+// send reminders to backend
+$(document).on("change" , ".singleReminder input" , function (){
+  var reminderValue = [];
+  $(".singleReminder input").each(function () {
+
+    var value = $(this).val();
+    var day = $(this).parent().parent().find("h4").text();
+
+    reminderValue.push({ day:day, value:value });
+  });
+  // console.log(reminderValue);
+
+  $.ajax({
+    url: "test2",
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify(reminderValue),
+    success: function (response) {
+      if (response.status) {
+        alert("تغییرات شما با موفقیت ذخیره شد.")
+      }
+      else {
+        alert("هنگام انجام عملیات مشکلی به وجود آمده..")
+      }
+    },
+    error: function () {
+      alert("خطا!! ارتباط برقرار نشد.")
+    }
+  });
+
+});
+
+
+
+
 
 
 // show image preview
