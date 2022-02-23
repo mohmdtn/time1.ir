@@ -180,38 +180,53 @@
                                 <div class="col-md-4 pb-3 pb-md-0 text-center">
                                     <h3>روز</h3>
                                     <div class="selectBox">
-                                        <select name="" id="">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
+                                        <select name="ageDay" id="">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4 pb-3 pb-md-0 text-center">
                                     <h3>ماه</h3>
                                     <div class="selectBox">
-                                        <select name="" id="">
-                                            <option value="">فروردین</option>
-                                            <option value="">اردیبهشت</option>
-                                            <option value="">خرداد</option>
+                                        <select name="ageMonth" id="">
+                                            <option value="1">فروردین</option>
+                                            <option value="2">اردیبهشت</option>
+                                            <option value="3">خرداد</option>
+                                            <option value="4">تیر</option>
+                                            <option value="5">مرداد</option>
+                                            <option value="6">شهریور</option>
+                                            <option value="7">مهر</option>
+                                            <option value="8">آبان</option>
+                                            <option value="9">آذر</option>
+                                            <option value="10">دی</option>
+                                            <option value="11">بهمن</option>
+                                            <option value="12">اسفند</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4 pb-3 pb-md-0 text-center">
                                     <h3>سال</h3>
                                     <div class="dateTransformYearInput">
-                                        <input type="text" value="1400">
+                                        <input type="text" name="ageYear" value="1400">
                                     </div>
                                 </div>
 
 
                                 <div class="col-12 pr-0 pt-4">
                                     <div class="dateTransformButtons">
-                                        <div class="row justify-content-center">
+                                        <div class="row justify-content-center">    
                                             <div class="col-8 col-offset-4">
                                                 <button class="btn btn-dark width-100 ageCalculate">محاسبه</button>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -221,22 +236,21 @@
                                     <div class="ageResult">
                                         <p class="ageResultHead">سن دقیق شما: 21 سال، 5 ماه، 1 روز، 12 ساعت، 48 دقیقه، 39 ثانیه</p>
 
-                                        <P>260 ماه از تاریخ تولد شما گذشته است.</P>
-                                        <p>1,117 هفته از تاریخ تولد شما گذشته است.</p>
-                                        <p>7,824 روز از تاریخ تولد شما گذشته است.</p>
-                                        <p>187,788 ساعت از تاریخ تولد شما گذشته است.</p>
-                                        <p>11,267,328 دقیقه از تاریخ تولد شما گذشته است.</p>
-                                        <p>676,039,719 ثانیه از تاریخ تولد شما گذشته است.</p>
+                                        <P><span class="passedMonths">260</span> ماه از تاریخ تولد شما گذشته است.</P>
+                                        <p><span class="passedWeeks">1,117</span> هفته از تاریخ تولد شما گذشته است.</p>
+                                        <p><span class="passedDays">7,824</span> روز از تاریخ تولد شما گذشته است.</p>
+                                        <p><span class="passedHours">187,788</span> ساعت از تاریخ تولد شما گذشته است.</p>
+                                        <p><span class="passedMins">11,267,328</span> دقیقه از تاریخ تولد شما گذشته است.</p>
+                                        <p><span class="passedSeconds">676,039,719</span> ثانیه از تاریخ تولد شما گذشته است.</p>
 
                                         <div class="ageResultFooter">
-                                            <p>212 روز تا سالگرد تولد شما مانده است.</p>
-                                            <p>سال 1379: سال نهنگ</p>
-                                            <p>نماد ماه شما اَسَد (شیر) است.</p>
-                                            <p>در تاریخ 1401/05/27 شما 22 ساله خواهید شد و تعداد شمع تولد شما 22 است</p>
+                                            <p><span class="tillDays">212</span> روز تا سالگرد تولد شما مانده است.</p>
+                                            <p>سال <span class="brithYear">1379</span>: <span class="brithYearName">سال نهنگ</span></p>
+                                            <p>نماد ماه شما <span class="brithYearAnimal">اَسَد (شیر)</span> است.</p>
+                                            <p class="brithdayCandles">در تاریخ 1401/05/27 شما 22 ساله خواهید شد و تعداد شمع تولد شما 22 است</p>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

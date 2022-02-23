@@ -167,7 +167,7 @@ $(".changeBgInner").click(function () {
 
 
 
-$(".testest").click(function () {
+$(".sendDataBtn").click(function () {
 
   // get weekdays input value
   var selected = [];
@@ -264,7 +264,7 @@ $(".testest").click(function () {
 
 
 // remove reminder
-$(document).on("click" , ".reminderDelteBtn" , function (){
+$(document).on("click", ".reminderDelteBtn", function () {
   $(this).parent().parent().remove();
 
   // var reminderID = $(this);
@@ -286,24 +286,23 @@ $(document).on("click" , ".reminderDelteBtn" , function (){
   //     alert("خطا!! ارتباط برقرار نشد.")
   //   }
   // });
-  
+
 });
 
 
 
 
 
-// send reminders to backend
-$(document).on("change" , ".singleReminder input" , function (){
+// send reminders to backend ajax
+$(document).on("change", ".singleReminder input", function () {
   var reminderValue = [];
   $(".singleReminder input").each(function () {
 
     var value = $(this).val();
     var day = $(this).parent().parent().find("h4").text();
 
-    reminderValue.push({ day:day, value:value });
+    reminderValue.push({ day: day, value: value });
   });
-  // console.log(reminderValue);
 
   $.ajax({
     url: "test2",
@@ -324,6 +323,234 @@ $(document).on("change" , ".singleReminder input" , function (){
   });
 
 });
+
+
+
+
+
+
+// calculate age ajax
+$(".ageCalculate").click(function () {
+  const day = $("select[name='ageDay']").val();
+  const month = $("select[name='ageMonth']").val();
+  const year = $("input[name='ageYear']").val();
+
+  const userSelctedDate = { day: day, month: month, year: year };
+
+  $.ajax({
+    url: "sendDataForCalculaeAge",
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify(userSelctedDate),
+    success: function (response) {
+      if (response.status) {
+        $(".ageResultHead").text(response.ageResultHead);
+        $(".passedMonths").text(response.passedMonths);
+        $(".passedWeeks").text(response.passedWeeks);
+        $(".passedDays").text(response.passedDays);
+        $(".passedHours").text(response.passedHours);
+        $(".passedMins").text(response.passedMins);
+        $(".passedSeconds").text(response.passedSeconds);
+        $(".tillDays").text(response.tillDays);
+        $(".brithYear").text(response.brithYear);
+        $(".brithYearName").text(response.brithYearName);
+        $(".brithYearAnimal").text(response.brithYearAnimal);
+        $(".brithdayCandles").text(response.brithdayCandles);
+      }
+      else {
+        alert("هنگام انجام عملیات مشکلی به وجود آمده.")
+      }
+    },
+    error: function () {
+      alert("خطا!! ارتباط برقرار نشد.")
+    }
+  });
+
+});
+
+
+
+
+
+
+
+// month calender ajax
+$(".mcSelects").change(function () {
+  const month = $("select[name='mcMonthName']").val();
+  const calenderType = $("select[name='calenderType']").val();
+
+  const userSelctedDate = { month: month, calenderType: calenderType };
+
+  $.ajax({
+    url: "sendDataForCalculaeAge",
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify(userSelctedDate),
+    success: function (response) {
+
+    },
+    error: function () {
+      alert("خطا!! ارتباط برقرار نشد.")
+    }
+  });
+
+});
+
+
+
+
+$(".MC").click(function (e) {
+  var response = {
+    1: {
+      day: 1,
+      occasion: "تست 1",
+      holiday: true
+    },
+    2: {
+      day: 2,
+      occasion: "تست 2",
+      holiday: false
+    },
+    3: {
+      day: 3,
+      occasion: "تست 3",
+      holiday: false
+    },
+    4: {
+      day: 4,
+      occasion: "تست 4",
+      holiday: true
+    },
+    5: {
+      day: 5,
+      occasion: "تست 5",
+      holiday: false
+    },
+    6: {
+      day: 6,
+      occasion: "تست 6",
+      holiday: false
+    },
+  };
+
+
+  $(".evenItems").children().remove();
+  $(".oddItems").children().remove();
+
+  $.each(response, function (i, item) {
+
+    if (i % 2 == 0) {
+      $(".evenItems").append('<div class="monthAllEventSingleDay pt-5"><div class="monthAllEventSingleDayInner d-flex justify-content-start"><div class="createCircle  d-flex align-items-center"><div class="line"></div><p>'+ response[i].day +'</p></div><div class="monthEventText">'+ response[i].occasion +'</div></div></div>');
+    }
+    else{
+      $(".oddItems").append('<div class="monthAllEventSingleDay pt-5"><div class="monthAllEventSingleDayInner d-flex justify-content-end"><div class="monthEventText">'+ response[i].occasion +'</div><div class="createCircle d-flex align-items-center"><p>'+ response[i].day +'</p><div class="line"></div></div></div></div>');
+      
+    }
+
+  });
+
+});
+
+
+
+
+
+////////////////// test for change calculate datas 
+
+// $(".calc").click(function () { 
+//   var response = {
+//     ageResultHead:"سن دقیق شما: 12 سال، 12 ماه، 12 روز، 12 ساعت، 12 دقیقه، 12 ثانیه",
+//     passedMonths:"51",
+//     passedWeeks:"52",
+//     passedDays:"53",
+//     passedHours:"54",
+//     passedMins:"55",
+//     passedSeconds:"56",
+//     tillDays:"57",
+//     brithYear:"58",
+//     brithYearName:"اژدها",
+//     brithYearAnimal:"پلنگ",
+//     brithdayCandles:"در تاریخ 1444/44/44 شما 44 ساله خواهید شد و تعداد شمع تولد شما 44 است"
+//   }
+//   $(".ageResultHead").text(response.ageResultHead);
+//   $(".passedMonths").text(response.passedMonths);
+//   $(".passedWeeks").text(response.passedWeeks);
+//   $(".passedDays").text(response.passedDays);
+//   $(".passedHours").text(response.passedHours);
+//   $(".passedMins").text(response.passedMins);
+//   $(".passedSeconds").text(response.passedSeconds);
+//   $(".tillDays").text(response.tillDays);
+//   $(".brithYear").text(response.brithYear);
+//   $(".brithYearName").text(response.brithYearName);
+//   $(".brithYearAnimal").text(response.brithYearAnimal);
+//   $(".brithdayCandles").text(response.brithdayCandles);
+// });
+
+
+
+
+
+
+// $(document).ready(function () {
+//   let cropper;
+//   let cropperModalId = "#cropperModal";
+//   let $jsPhotoUploadInput = $(".js-photo-upload");
+
+//   $jsPhotoUploadInput.on("change", function () {
+//     var files = this.files;
+//     if (files.length > 0) {
+//       var photo = files[0];
+
+//       var reader = new FileReader();
+//       reader.onload = function (event) {
+//         var image = $(".js-avatar-preview")[0];
+//         image.src = event.target.result;
+
+//         cropper = new Cropper(image, {
+//           viewMode: 1,
+//           aspectRatio: 1,
+//           minContainerWidth: 400,
+//           minContainerHeight: 400,
+//           minCropBoxWidth: 271,
+//           minCropBoxHeight: 271,
+//           movable: true,
+//           ready: function () {
+//             console.log("ready");
+//             console.log(cropper.ready);
+//           }
+//         });
+
+//         $(cropperModalId).modal();
+//       };
+//       reader.readAsDataURL(photo);
+//     }
+//   });
+
+//   $(".js-save-cropped-avatar").on("click", function (event) {
+//     event.preventDefault();
+
+//     console.log(cropper.ready);
+
+//     var $button = $(this);
+//     $button.text("uploading...");
+//     $button.prop("disabled", true);
+
+//     const canvas = cropper.getCroppedCanvas();
+//     const base64encodedImage = canvas.toDataURL();
+//     $("#avatar-crop").attr("src", base64encodedImage);
+//     $(cropperModalId).modal("hide");
+//   });
+
+// });
+
+
+
+
+
+
+
+
+
 
 
 
