@@ -1595,13 +1595,15 @@ header, .headContent{
     margin: 0 auto;
 }
 
-.imagePreview img{
+.imagePreview .imgCropperWrapper{
     border: 3px solid var(--site-pourple);
     background-color: var(--site-pourple);
     border-radius: 10px;
+    overflow: hidden;
 }
 
-.imagePreview button{
+
+.imagePreview input{
     margin-top: 15px;
     background-color: var(--site-pourple);
     border: none;

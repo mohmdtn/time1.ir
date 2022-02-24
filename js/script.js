@@ -769,6 +769,28 @@ imgInp.onchange = evt => {
   if (file) {
     blah.src = URL.createObjectURL(file)
     $(".imagePreview").slideDown();
+    const image = document.getElementById('blah');
+    var ratio = 1 / 1;
+    if ($(".postOutputWrapper").css("display") == "block"){
+      ratio = 1 / 1;
+    }
+    else{
+      ratio = 9 / 16;
+    }
+
+    const cropper = new Cropper(image, {
+        aspectRatio: ratio,
+        viewMode: 1,
+        center: true,
+        dragMode: 'move',
+    });
+
+    $(".cropperBtn").click(function (e) { 
+      var croppedimage = cropper.getCroppedCanvas().toDataURL("image/png");
+      $(".imagePreview textarea").val(croppedimage)
+      console.log(croppedimage);
+      $(".bgForm").submit();
+    });
   }
 }
 

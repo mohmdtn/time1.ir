@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="packages/fontawsome-5.13.0/all.min.css">
+    <link rel="stylesheet" href="css/cropper.min.css">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/styleDependency.css">
     <link rel="stylesheet" href="css/style.css">
@@ -551,38 +552,18 @@
                         </div>
                     </div>
 
-                    <form action="">
-                        <label for="imgInp">
-                            <h4 class="pt-4">پس زمینه خود را آپلود کنید</h4>
-                        </label>
-                        <input type="file" accept="image/*" class="d-none" id="imgInp">
+                    <label for="imgInp">
+                        <h4 class="pt-4">پس زمینه خود را آپلود کنید</h4>
+                    </label>
+                    <input type="file" accept="image/*" class="d-none" id="imgInp">
 
+                    <form class="bgForm" action="">
                         <div class="imagePreview">
-                            <center><img src="" alt="" id="blah"></center>
-                            <center><button class="btn btn-dark">ثبت تصویر</button></center>
+                            <center><div class="imgCropperWrapper"><img src="" alt="" id="blah"></div></center>
+                            <center><input type="button" class="btn btn-dark cropperBtn" value="ثبت تصویر"></center>
+                            <textarea name=""></textarea>
                         </div>
-
                     </form>
-
-                    <!-- <div>
-                        <input type="file" name="photo" accept="image/*" class="js-photo-upload">
-                    </div>
-                      
-                    <img id="avatar-crop" src="" style="width:271px; height:271px;">
-                      
-                    <div class="modal fade remove-modal" tabindex="-1" role="dialog" id="cropperModal">
-                        <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content text-center">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <div class="modal-positioner">
-                                    <h1>Crop Photo</h1>
-                                    <hr>
-                                    <img style="width: 271px; height: 271px;" class="js-avatar-preview" src="">
-                                    <button class="btn btn-primary js-save-cropped-avatar">Save</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
 
                 </div>
 
@@ -690,6 +671,7 @@
 
 <script src="js/swiper-bundle.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/cropper.min.js"></script>
 <script src="js/script.js"></script>
 
 </html>
