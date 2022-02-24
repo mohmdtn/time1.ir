@@ -454,8 +454,6 @@ $(".mcSelects").change(function () {
   });
 
 });
-
-
 ////////////////////////// month calender change test
 
 // $(".MC").click(function (e) {
@@ -528,6 +526,89 @@ $(".mcSelects").change(function () {
 //   });
 
 // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// day calender ajax
+$(".dcSelect").change(function () {
+  const calenderType = $("select[name='calenderType']").val();
+  const userSelctedDate = { calenderType: calenderType };
+
+  $.ajax({
+    url: "sendDataTestUrl",
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify(userSelctedDate),
+    success: function (response) {
+
+      $(".eventsWrapper").children().remove();
+
+      $.each(response, function (i, item) {
+        
+      });
+
+    },
+    error: function () {
+      alert("خطا!! ارتباط برقرار نشد.")
+    }
+  });
+
+});
+// change day calender data test
+// $(".btnTest").click(function () { 
+//   var response = {
+//     1 : "متن تست اول",
+//     2 : "متن تست دوم",
+//     3 : "متن تست سوم",
+//     4 : "متن تست چهارم",
+//     5 : "متن تست پنجم",
+//     6 : "متن تست ششم",
+//   }
+//   $(".eventsWrapper").children().remove();
+
+//   $.each(response, function (i, item) {
+//     $(".eventsWrapper").append('<p class="pb-2">'+ response[i] +'</p>');
+    
+//   });
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
