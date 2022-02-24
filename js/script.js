@@ -558,7 +558,7 @@ $(".dcSelect").change(function () {
       $(".eventsWrapper").children().remove();
 
       $.each(response, function (i, item) {
-        
+
       });
 
     },
@@ -582,12 +582,88 @@ $(".dcSelect").change(function () {
 
 //   $.each(response, function (i, item) {
 //     $(".eventsWrapper").append('<p class="pb-2">'+ response[i] +'</p>');
-    
+
 //   });
 // });
 
 
 
+
+
+
+
+
+
+
+// date transform page ajax
+$(".dateTransfotmBtn").click(function () {
+  const calenderType = $("select[name='calenderType']").val();
+  const day = $("select[name='transformDateDay']").val();
+  const month = $("select[name='transformDateMonth']").val();
+  const year = $("input[name='transformDateYear']").val();
+  const userSelctedDate = { calenderType: calenderType, day: day, month: month, year: year };
+
+  $.ajax({
+    url: "sendDataTestUrl",
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify(userSelctedDate),
+    success: function (response) {
+      $(".dateTransformOutput").slideDown();
+      $(".dateTransformOutput>.allDates>.row").children().remove();
+
+      $(".khorshidi>.dateText").text(response.khorshidi.text);
+      $(".khorshidi>.dateNumber").text(response.khorshidi.number);
+    
+      $(".miladi>.dateText").text(response.miladi.text);
+      $(".miladi>.dateNumber").text(response.miladi.number);
+    
+      $(".qamari>.dateText").text(response.qamari.text);
+      $(".qamari>.dateNumber").text(response.qamari.number);
+    
+      $(".tabari>.dateText").text(response.tabari.text);
+      $(".tabari>.dateNumber").text(response.tabari.number);
+    },
+    error: function () {
+      alert("خطا!! ارتباط برقرار نشد.")
+    }
+  });
+
+});
+// change data transform page test
+// $(".dateTransfotmBtn").click(function () {
+  // var response = {
+  //   khorshidi: {
+  //     text: "پنجشنبه 5 اسفند 1400",
+  //     number: "1400/12/05"
+  //   },
+  //   miladi: {
+  //     text: "Thursday, 24 February 2022",
+  //     number: "2022/02/24"
+  //   },
+  //   qamari: {
+  //     text: "الخميس 22 رجب 1443",
+  //     number: "1443/07/22"
+  //   },
+  //   tabari: {
+  //     text: "پنجشنبه 6 اونه ما 1533",
+  //     number: "1533/08/06"
+  //   },
+  // }
+
+//   $(".khorshidi>.dateText").text(response.khorshidi.text);
+//   $(".khorshidi>.dateNumber").text(response.khorshidi.number);
+
+//   $(".miladi>.dateText").text(response.miladi.text);
+//   $(".miladi>.dateNumber").text(response.miladi.number);
+
+//   $(".qamari>.dateText").text(response.qamari.text);
+//   $(".qamari>.dateNumber").text(response.qamari.number);
+
+//   $(".tabari>.dateText").text(response.tabari.text);
+//   $(".tabari>.dateNumber").text(response.tabari.number);
+
+// });
 
 
 

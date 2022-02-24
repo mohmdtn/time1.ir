@@ -179,27 +179,36 @@
                                 <div class="col-md-4 pb-3 pb-md-0 text-center">
                                     <h3>روز</h3>
                                     <div class="selectBox">
-                                        <select name="" id="">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
+                                        <select name="transformDateDay" id="">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4 pb-3 pb-md-0 text-center">
                                     <h3>ماه</h3>
                                     <div class="selectBox">
-                                        <select name="" id="">
-                                            <option value="">فروردین</option>
-                                            <option value="">اردیبهشت</option>
-                                            <option value="">خرداد</option>
+                                        <select name="transformDateMonth" id="">
+                                            <option value="1">فروردین</option>
+                                            <option value="2">اردیبهشت</option>
+                                            <option value="3">خرداد</option>
+                                            <option value="4">تیر</option>
+                                            <option value="5">مرداد</option>
+                                            <option value="6">شهریور</option>
+                                            <option value="7">مهر</option>
+                                            <option value="8">آبان</option>
+                                            <option value="9">آذر</option>
+                                            <option value="10">دی</option>
+                                            <option value="11">بهمن</option>
+                                            <option value="12">اسفند</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4 pb-3 pb-md-0 text-center">
                                     <h3>سال</h3>
                                     <div class="dateTransformYearInput">
-                                        <input type="text" value="1400">
+                                        <input type="text" value="1400" name="transformDateYear">
                                     </div>
                                 </div>
 
@@ -212,10 +221,10 @@
                                                 <h3 class="mb-0" for="">نوع</h3>
                                             </div>
                                             <div class="yearFormat">
-                                                <select name="" id="">
-                                                    <option value="">خورشیدی به میلادی ، قمری و طبری</option>
-                                                    <option value="">خورشیدی به میلادی ، قمری و طبری</option>
-                                                    <option value="">خورشیدی به میلادی ، قمری و طبری</option>
+                                                <select name="calenderType" id="">
+                                                    <option value="1">خورشیدی به میلادی ، قمری و طبری</option>
+                                                    <option value="2">خورشیدی به میلادی ، قمری و طبری</option>
+                                                    <option value="3">خورشیدی به میلادی ، قمری و طبری</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -228,16 +237,47 @@
                                 <div class="col-12 pr-0 pt-4">
                                     <div class="dateTransformButtons">
                                         <div class="row">
-                                            <div class="col-8">
-                                                <button class="btn btn-dark width-100">تبدیل</button>
+                                            <div class="col-12">
+                                                <button class="btn btn-dark width-100 dateTransfotmBtn">تبدیل</button>
                                             </div>
 
-                                            <div class="col-4">
+                                            <!-- <div class="col-4">
                                                 <button class="btn btn-dark width-100 exchangeBtn d-flex align-items-center justify-content-center height-100"><i class="fas fa-exchange-alt"></i></button>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
+
+                                <section class="dateTransformOutput mt-4">
+                                    <div class="allDates text-center">
+                                        <div class="row">
+                                            <div class="col-md-3 col-6 datePackage khorshidi datePackage1 pb-4">
+                                                <h4 class="yearName">خورشیدی</h4>
+                                                <h5 class="dateText">دوشنبه ۲۷ دی ۱۴۰۰</h5>
+                                                <h5 class="dateNumber">۱۴۰۰/۱۰/۲۷</h5>
+                                            </div>
+                
+                                            <div class="col-md-3 col-6 datePackage miladi datePackage2 pb-4">
+                                                <h4 class="yearName">میلادی</h4>
+                                                <h5 class="dateText">دوشنبه ۲۷ دی ۱۴۰۰</h5>
+                                                <h5 class="dateNumber">۱۴۰۰/۱۰/۲۷</h5>
+                                            </div>
+                
+                                            <div class="col-md-3 col-6 datePackage qamari datePackage3 pb-4 pt-4 pt-md-0">
+                                                <h4 class="yearName">قمری</h4>
+                                                <h5 class="dateText">دوشنبه ۲۷ دی ۱۴۰۰</h5>
+                                                <h5 class="dateNumber">۱۴۰۰/۱۰/۲۷</h5>
+                                            </div>
+                
+                                            <div class="col-md-3 col-6 datePackage tabari pb-4 pt-4 pt-md-0">
+                                                <h4 class="yearName">طبری</h4>
+                                                <h5 class="dateText">دوشنبه ۲۷ دی ۱۴۰۰</h5>
+                                                <h5 class="dateNumber">۱۴۰۰/۱۰/۲۷</h5>
+                                            </div>
+                
+                                        </div>
+                                    </div>
+                                </section>
 
                             </div>
                         </div>
