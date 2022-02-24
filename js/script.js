@@ -367,96 +367,7 @@ $(".ageCalculate").click(function () {
   });
 
 });
-
-
-
-
-
-
-
-// month calender ajax
-$(".mcSelects").change(function () {
-  const month = $("select[name='mcMonthName']").val();
-  const calenderType = $("select[name='calenderType']").val();
-
-  const userSelctedDate = { month: month, calenderType: calenderType };
-
-  $.ajax({
-    url: "sendDataForCalculaeAge",
-    type: "POST",
-    contentType: "application/json",
-    data: JSON.stringify(userSelctedDate),
-    success: function (response) {
-
-    },
-    error: function () {
-      alert("خطا!! ارتباط برقرار نشد.")
-    }
-  });
-
-});
-
-
-
-
-$(".MC").click(function (e) {
-  var response = {
-    1: {
-      day: 1,
-      occasion: "تست 1",
-      holiday: true
-    },
-    2: {
-      day: 2,
-      occasion: "تست 2",
-      holiday: false
-    },
-    3: {
-      day: 3,
-      occasion: "تست 3",
-      holiday: false
-    },
-    4: {
-      day: 4,
-      occasion: "تست 4",
-      holiday: true
-    },
-    5: {
-      day: 5,
-      occasion: "تست 5",
-      holiday: false
-    },
-    6: {
-      day: 6,
-      occasion: "تست 6",
-      holiday: false
-    },
-  };
-
-
-  $(".evenItems").children().remove();
-  $(".oddItems").children().remove();
-
-  $.each(response, function (i, item) {
-
-    if (i % 2 == 0) {
-      $(".evenItems").append('<div class="monthAllEventSingleDay pt-5"><div class="monthAllEventSingleDayInner d-flex justify-content-start"><div class="createCircle  d-flex align-items-center"><div class="line"></div><p>'+ response[i].day +'</p></div><div class="monthEventText">'+ response[i].occasion +'</div></div></div>');
-    }
-    else{
-      $(".oddItems").append('<div class="monthAllEventSingleDay pt-5"><div class="monthAllEventSingleDayInner d-flex justify-content-end"><div class="monthEventText">'+ response[i].occasion +'</div><div class="createCircle d-flex align-items-center"><p>'+ response[i].day +'</p><div class="line"></div></div></div></div>');
-      
-    }
-
-  });
-
-});
-
-
-
-
-
-////////////////// test for change calculate datas 
-
+//////////////////////// test for change calculate datas 
 // $(".calc").click(function () { 
 //   var response = {
 //     ageResultHead:"سن دقیق شما: 12 سال، 12 ماه، 12 روز، 12 ساعت، 12 دقیقه، 12 ثانیه",
@@ -485,6 +396,144 @@ $(".MC").click(function (e) {
 //   $(".brithYearAnimal").text(response.brithYearAnimal);
 //   $(".brithdayCandles").text(response.brithdayCandles);
 // });
+
+
+
+
+
+
+
+
+
+// month calender ajax
+$(".mcSelects").change(function () {
+  const month = $("select[name='mcMonthName']").val();
+  const calenderType = $("select[name='calenderType']").val();
+
+  const userSelctedDate = { month: month, calenderType: calenderType };
+
+  $.ajax({
+    url: "sendDataForCalculaeAge",
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify(userSelctedDate),
+    success: function (response) {
+
+      $(".evenItems").children().remove();
+      $(".oddItems").children().remove();
+
+      $(".monthAllEventName").text(response.monthInfo.monthName);
+      $(".monthAllEventNumber>p").text(response.monthInfo.monthNumber);
+
+      $.each(response.occasionInfo, function (i, item) {
+
+        if (i % 2 == 0) {
+          if (response.occasionInfo[i].holiday == true) {
+            $(".evenItems").append('<div class="monthAllEventSingleDay pt-5"><div class="monthAllEventSingleDayInner d-flex justify-content-start"><div class="createCircle createCircleHoliday d-flex align-items-center"><div class="line"></div><p>' + response.occasionInfo[i].day + '</p></div><div class="monthEventText">' + response.occasionInfo[i].occasion + '</div></div></div>');
+          }
+          else {
+            $(".evenItems").append('<div class="monthAllEventSingleDay pt-5"><div class="monthAllEventSingleDayInner d-flex justify-content-start"><div class="createCircle  d-flex align-items-center"><div class="line"></div><p>' + response.occasionInfo[i].day + '</p></div><div class="monthEventText">' + response.occasionInfo[i].occasion + '</div></div></div>');
+          }
+        }
+
+        else {
+          if (response.occasionInfo[i].holiday == true) {
+            $(".oddItems").append('<div class="monthAllEventSingleDay pt-5"><div class="monthAllEventSingleDayInner d-flex justify-content-end"><div class="monthEventText">' + response.occasionInfo[i].occasion + '</div><div class="createCircle createCircleHoliday d-flex align-items-center"><p>' + response.occasionInfo[i].day + '</p><div class="line"></div></div></div></div>');
+          }
+          else {
+            $(".oddItems").append('<div class="monthAllEventSingleDay pt-5"><div class="monthAllEventSingleDayInner d-flex justify-content-end"><div class="monthEventText">' + response.occasionInfo[i].occasion + '</div><div class="createCircle d-flex align-items-center"><p>' + response.occasionInfo[i].day + '</p><div class="line"></div></div></div></div>');
+          }
+        }
+
+      });
+
+    },
+    error: function () {
+      alert("خطا!! ارتباط برقرار نشد.")
+    }
+  });
+
+});
+
+
+////////////////////////// month calender change test
+
+// $(".MC").click(function (e) {
+//   var response = {
+//     monthInfo: {
+//       monthNumber: "12",
+//       monthName: "اسفند"
+//     },
+//     occasionInfo: {
+//       1: {
+//         day: 1,
+//         occasion: "تست 1",
+//         holiday: true
+//       },
+//       2: {
+//         day: 2,
+//         occasion: "تست 2",
+//         holiday: false
+//       },
+//       3: {
+//         day: 3,
+//         occasion: "تست 3",
+//         holiday: false
+//       },
+//       4: {
+//         day: 4,
+//         occasion: "تست 4",
+//         holiday: true
+//       },
+//       5: {
+//         day: 5,
+//         occasion: "تست 5",
+//         holiday: true
+//       },
+//       6: {
+//         day: 6,
+//         occasion: "تست 6",
+//         holiday: false
+//       },
+//     }
+//   };
+
+//   $(".evenItems").children().remove();
+//   $(".oddItems").children().remove();
+
+//   $(".monthAllEventName").text(response.monthInfo.monthName);
+//   $(".monthAllEventNumber>p").text(response.monthInfo.monthNumber);
+
+
+//   $.each(response.occasionInfo, function (i, item) {
+
+//     if (i % 2 == 0) {
+//       if (response.occasionInfo[i].holiday == true) {
+//         $(".evenItems").append('<div class="monthAllEventSingleDay pt-5"><div class="monthAllEventSingleDayInner d-flex justify-content-start"><div class="createCircle createCircleHoliday d-flex align-items-center"><div class="line"></div><p>' + response.occasionInfo[i].day + '</p></div><div class="monthEventText">' + response.occasionInfo[i].occasion + '</div></div></div>');
+//       }
+//       else {
+//         $(".evenItems").append('<div class="monthAllEventSingleDay pt-5"><div class="monthAllEventSingleDayInner d-flex justify-content-start"><div class="createCircle  d-flex align-items-center"><div class="line"></div><p>' + response.occasionInfo[i].day + '</p></div><div class="monthEventText">' + response.occasionInfo[i].occasion + '</div></div></div>');
+//       }
+//     }
+
+//     else {
+//       if (response.occasionInfo[i].holiday == true) {
+//         $(".oddItems").append('<div class="monthAllEventSingleDay pt-5"><div class="monthAllEventSingleDayInner d-flex justify-content-end"><div class="monthEventText">' + response.occasionInfo[i].occasion + '</div><div class="createCircle createCircleHoliday d-flex align-items-center"><p>' + response.occasionInfo[i].day + '</p><div class="line"></div></div></div></div>');
+//       }
+//       else {
+//         $(".oddItems").append('<div class="monthAllEventSingleDay pt-5"><div class="monthAllEventSingleDayInner d-flex justify-content-end"><div class="monthEventText">' + response.occasionInfo[i].occasion + '</div><div class="createCircle d-flex align-items-center"><p>' + response.occasionInfo[i].day + '</p><div class="line"></div></div></div></div>');
+//       }
+//     }
+
+//   });
+
+// });
+
+
+
+
+
+
 
 
 
