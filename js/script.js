@@ -1,15 +1,3 @@
-$(document).ready(function () {
-
-  $(".ageCalculate").click(function () {
-    $(".ageResult").slideDown();
-  });
-
-});
-
-
-
-
-
 // digital clock timer
 function startTime() {
   const today = new Date();
@@ -148,15 +136,18 @@ $(".storySliderWrapper .swiper-wrapper .slideInner img").click(function () {
 });
 
 $(".changeBgInner").click(function () {
+  $("#imgInp").val(null);
+  $(".imagePreview").slideUp();
   if ($(".postOutputWrapper").css("display") == "block") {
     $(".postSliderWrapper").slideDown();
     $(".storySliderWrapper").slideUp();
-
   }
+
   else {
     $(".storySliderWrapper").slideDown();
     $(".postSliderWrapper").slideUp();
   }
+
 });
 
 // $(".slideInner").click(function () { 
@@ -224,7 +215,6 @@ $(".sendDataBtn").click(function () {
     // console.log(JSON.stringify(items2));
 
     storyItems.push({ SIheight: storyHeight, SIwidth: storyWidth, SITop: storyTop, SILeft: storyLeft });
-
   });
   var storyBackground = $(".storyOutputInner").css("background-image");
   var storybBgHeight = $(".storyOutputInner").css("height");
@@ -334,6 +324,9 @@ $(".ageCalculate").click(function () {
   const day = $("select[name='ageDay']").val();
   const month = $("select[name='ageMonth']").val();
   const year = $("input[name='ageYear']").val();
+
+  $(".ageResult").slideUp("fast");
+  $(".ageResult").slideDown();
 
   const userSelctedDate = { day: day, month: month, year: year };
 
@@ -455,7 +448,6 @@ $(".mcSelects").change(function () {
 
 });
 ////////////////////////// month calender change test
-
 // $(".MC").click(function (e) {
 //   var response = {
 //     monthInfo: {
@@ -536,13 +528,6 @@ $(".mcSelects").change(function () {
 
 
 
-
-
-
-
-
-
-
 // day calender ajax
 $(".dcSelect").change(function () {
   const calenderType = $("select[name='calenderType']").val();
@@ -609,6 +594,7 @@ $(".dateTransfotmBtn").click(function () {
     contentType: "application/json",
     data: JSON.stringify(userSelctedDate),
     success: function (response) {
+      $(".dateTransformOutput").slideUp("fast");
       $(".dateTransformOutput").slideDown();
       $(".dateTransformOutput>.allDates>.row").children().remove();
 
@@ -673,103 +659,19 @@ $(".dateTransfotmBtn").click(function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $(document).ready(function () {
-//   let cropper;
-//   let cropperModalId = "#cropperModal";
-//   let $jsPhotoUploadInput = $(".js-photo-upload");
-
-//   $jsPhotoUploadInput.on("change", function () {
-//     var files = this.files;
-//     if (files.length > 0) {
-//       var photo = files[0];
-
-//       var reader = new FileReader();
-//       reader.onload = function (event) {
-//         var image = $(".js-avatar-preview")[0];
-//         image.src = event.target.result;
-
-//         cropper = new Cropper(image, {
-//           viewMode: 1,
-//           aspectRatio: 1,
-//           minContainerWidth: 400,
-//           minContainerHeight: 400,
-//           minCropBoxWidth: 271,
-//           minCropBoxHeight: 271,
-//           movable: true,
-//           ready: function () {
-//             console.log("ready");
-//             console.log(cropper.ready);
-//           }
-//         });
-
-//         $(cropperModalId).modal();
-//       };
-//       reader.readAsDataURL(photo);
-//     }
-//   });
-
-//   $(".js-save-cropped-avatar").on("click", function (event) {
-//     event.preventDefault();
-
-//     console.log(cropper.ready);
-
-//     var $button = $(this);
-//     $button.text("uploading...");
-//     $button.prop("disabled", true);
-
-//     const canvas = cropper.getCroppedCanvas();
-//     const base64encodedImage = canvas.toDataURL();
-//     $("#avatar-crop").attr("src", base64encodedImage);
-//     $(cropperModalId).modal("hide");
-//   });
-
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // show image preview
 imgInp.onchange = evt => {
-  const [file] = imgInp.files
+  var file = [];
+  var image = null;
+
+  [file] = imgInp.files;
   if (file) {
     blah.src = URL.createObjectURL(file)
+    $(".imagePreview").slideUp(10);
     $(".imagePreview").slideDown();
-    const image = document.getElementById('blah');
+
+    image = document.getElementById('blah');
+
     var ratio = 1 / 1;
     if ($(".postOutputWrapper").css("display") == "block"){
       ratio = 1 / 1;
@@ -778,11 +680,12 @@ imgInp.onchange = evt => {
       ratio = 9 / 16;
     }
 
-    const cropper = new Cropper(image, {
-        aspectRatio: ratio,
-        viewMode: 1,
-        center: true,
-        dragMode: 'move',
+    var cropper = new Cropper(image, {
+      aspectRatio: ratio,
+      viewMode: 1,
+      center: true,
+      zoomable: false,
+      minCropBoxWidth: 40,
     });
 
     $(".cropperBtn").click(function (e) { 

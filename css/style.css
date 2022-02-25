@@ -1457,6 +1457,8 @@ header, .headContent{
 
 .postOutputInner .draggable, .storyOutputInner .draggable{
     width: 150px;
+    top: 0;
+    left: 0;
     max-width: 250px;
     text-align: center;
     cursor: move;
@@ -1587,6 +1589,15 @@ header, .headContent{
 .modalBody form h4:hover{
     cursor: pointer;
     color: var(--stie-high-gray);
+}
+
+.imgInpLabel h4{
+    cursor: pointer;
+    transition: .3s;
+}
+
+.imgInpLabel h4:hover{
+    color: var(--site-gray);
 }
 
 .imagePreview{
