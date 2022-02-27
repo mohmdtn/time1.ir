@@ -600,13 +600,13 @@ $(".dateTransfotmBtn").click(function () {
 
       $(".khorshidi>.dateText").text(response.khorshidi.text);
       $(".khorshidi>.dateNumber").text(response.khorshidi.number);
-    
+
       $(".miladi>.dateText").text(response.miladi.text);
       $(".miladi>.dateNumber").text(response.miladi.number);
-    
+
       $(".qamari>.dateText").text(response.qamari.text);
       $(".qamari>.dateNumber").text(response.qamari.number);
-    
+
       $(".tabari>.dateText").text(response.tabari.text);
       $(".tabari>.dateNumber").text(response.tabari.number);
     },
@@ -618,24 +618,24 @@ $(".dateTransfotmBtn").click(function () {
 });
 // change data transform page test
 // $(".dateTransfotmBtn").click(function () {
-  // var response = {
-  //   khorshidi: {
-  //     text: "پنجشنبه 5 اسفند 1400",
-  //     number: "1400/12/05"
-  //   },
-  //   miladi: {
-  //     text: "Thursday, 24 February 2022",
-  //     number: "2022/02/24"
-  //   },
-  //   qamari: {
-  //     text: "الخميس 22 رجب 1443",
-  //     number: "1443/07/22"
-  //   },
-  //   tabari: {
-  //     text: "پنجشنبه 6 اونه ما 1533",
-  //     number: "1533/08/06"
-  //   },
-  // }
+// var response = {
+//   khorshidi: {
+//     text: "پنجشنبه 5 اسفند 1400",
+//     number: "1400/12/05"
+//   },
+//   miladi: {
+//     text: "Thursday, 24 February 2022",
+//     number: "2022/02/24"
+//   },
+//   qamari: {
+//     text: "الخميس 22 رجب 1443",
+//     number: "1443/07/22"
+//   },
+//   tabari: {
+//     text: "پنجشنبه 6 اونه ما 1533",
+//     number: "1533/08/06"
+//   },
+// }
 
 //   $(".khorshidi>.dateText").text(response.khorshidi.text);
 //   $(".khorshidi>.dateNumber").text(response.khorshidi.number);
@@ -660,6 +660,7 @@ $(".dateTransfotmBtn").click(function () {
 
 
 // show image preview
+var cropper;
 imgInp.onchange = evt => {
   var file = [];
   var image = null;
@@ -673,14 +674,14 @@ imgInp.onchange = evt => {
     image = document.getElementById('blah');
 
     var ratio = 1 / 1;
-    if ($(".postOutputWrapper").css("display") == "block"){
+    if ($(".postOutputWrapper").css("display") == "block") {
       ratio = 1 / 1;
     }
-    else{
+    else {
       ratio = 9 / 16;
     }
 
-    var cropper = new Cropper(image, {
+    cropper = new Cropper(image, {
       aspectRatio: ratio,
       viewMode: 1,
       center: true,
@@ -688,7 +689,7 @@ imgInp.onchange = evt => {
       minCropBoxWidth: 40,
     });
 
-    $(".cropperBtn").click(function (e) { 
+    $(".cropperBtn").click(function (e) {
       var croppedimage = cropper.getCroppedCanvas().toDataURL("image/png");
       $(".imagePreview textarea").val(croppedimage)
       console.log(croppedimage);
@@ -697,6 +698,7 @@ imgInp.onchange = evt => {
   }
 }
 
-
-
-
+$(".imgInpLabel").click(function () {
+  cropper.destroy();
+  $(".imagePreview").slideUp("fast");
+});
