@@ -255,27 +255,29 @@ $(".sendDataBtn").click(function () {
 
 // remove reminder
 $(document).on("click", ".reminderDelteBtn", function () {
-  $(this).parent().parent().remove();
-
-  // var reminderID = $(this);
-  // $.ajax({
-  //   url: "removeReminder",
-  //   type: "POST",
-  //   contentType: "application/json",
-  //   data: reminderID,
-  //   success: function (response) {
-  //     if (response.status) {
-  //       alert("یادآور با موفقیت حذف شد.")
-  //       $(this).parent().parent().remove()
-  //     }
-  //     else {
-  //       alert("هنگام انجام عملیات مشکلی به وجود آمده..")
-  //     }
-  //   },
-  //   error: function () {
-  //     alert("خطا!! ارتباط برقرار نشد.")
-  //   }
-  // });
+  // $(this).parent().parent().remove();
+  let confirmText = "آیا از حذف یادآور مطمن هستید؟";
+  if (confirm(confirmText) == true) {
+    var reminderID = $(this);
+    $.ajax({
+      url: "removeReminder",
+      type: "POST",
+      contentType: "application/json",
+      data: reminderID,
+      success: function (response) {
+        if (response.status) {
+          alert("یادآور با موفقیت حذف شد.")
+          $(this).parent().parent().remove();
+        }
+        else {
+          alert("هنگام انجام عملیات مشکلی به وجود آمده..")
+        }
+      },
+      error: function () {
+        alert("خطا!! ارتباط برقرار نشد.")
+      }
+    });
+  }
 
 });
 
