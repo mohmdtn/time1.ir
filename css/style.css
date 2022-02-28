@@ -1472,6 +1472,23 @@ header, .headContent{
     outline: 9px solid #5567f296;
 }
 
+.draggableText{
+    width: auto;
+    height: auto;
+    top: 0;
+    left: 0;
+    text-align: center;
+    cursor: move;
+    transition: outline .3s;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.draggableText:hover{
+    box-shadow: 0px 30px 42px #2C2C2C26;
+    outline: 9px solid #5567f296;
+}
+
 .changeBtns{
     background-color: #fff;
     padding: 10px 10px;

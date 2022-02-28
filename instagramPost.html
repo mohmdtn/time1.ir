@@ -296,6 +296,7 @@
                                 <script>
                                     $(function () {
                                         $(".draggable").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", aspectRatio: "parent" });
+                                        $(".draggableText").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", minHeight: "content", minWidth: "content"});
                                     });
                                 </script>
                                 <div class="col-md-5">
@@ -326,6 +327,7 @@
                                                 <div class="draggable" style="left: 0;"><img src="images/manCalender.png" alt=""></div>
                                                 <div class="draggable"><img src="images/analys.png" alt=""></div>
                                                 <div class="draggable" style="left: 30%;"><img src="images/logo.png" alt=""></div>
+                                                <div class="draggableText" style="left: 40px;top: 100px;"><p></p></div>
                                             </div>
                                         </div>
                                     </div>
@@ -336,6 +338,7 @@
                                                 <div class="draggable" style="left: 0;"><img src="images/manCalender.png" alt=""></div>
                                                 <div class="draggable"><img src="images/analys.png" alt=""></div>
                                                 <div class="draggable" style="left: 30%;"><img src="images/logo.png" alt=""></div>
+                                                <div class="draggableText" style="left: 40px;top: 100px;"><p></p></div>
                                             </div>
                                         </div>
                                     </div>
@@ -428,8 +431,7 @@
                                                                 <span>ش</span><span>ی</span><span>د</span><span>س</span><span>چ</span><span>پ</span><span>ج</span>
                                                             </div>
 
-                                                            <div
-                                                                class="calenderBodyBody justify-content-around align-items-center">
+                                                            <div class="calenderBodyBody justify-content-around align-items-center">
                                                                 <div><span>1</span></div>
                                                                 <div><span>2</span></div>
                                                                 <div><span>3</span></div>
@@ -618,7 +620,7 @@
                 <div class="modal-body modalBody addTextModal p-4">
                     <h4>افزودن متن</h4>
 
-                    <textarea class="form-control" name="" id="" rows="4"></textarea>
+                    <textarea class="form-control" name="postAddText" id="" rows="4"></textarea>
 
                     <center><div class="btn btn-dark saveTextBtn">ثبت متن</div></center>
                 </div>

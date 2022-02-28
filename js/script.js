@@ -660,6 +660,46 @@ $(".dateTransfotmBtn").click(function () {
 
 
 
+// add text modal
+$(".saveTextBtn").click(function () {
+  
+  var postTextValue = $("textarea[name='postAddText']").val();
+
+  if ($(".postOutputWrapper").css("display") == "block") {
+    $(".postOutputInner .draggableText p").html(postTextValue);
+  }
+  else {
+    $(".storyOutputInner .draggableText p").html(postTextValue);
+  }
+
+});
+
+// set color to text modal
+$("#changeTextColor").change(function () {
+
+  var postTextColor = $("#changeTextColor").val();
+
+  if ($(".postOutputWrapper").css("display") == "block") {
+    $(".postOutputInner .draggableText p").css("color", postTextColor);
+  }
+  else {
+    $(".storyOutputInner .draggableText p").css("color", postTextColor);
+  }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // show image preview
 var cropper;
