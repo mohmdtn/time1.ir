@@ -273,7 +273,7 @@
                                             <h4 class="m-0">تاریخ</h4>
                                         </div> -->
 
-                                        <div class="btnWrapper py-1">
+                                        <div class="btnWrapper py-1 pb-5">
                                             <div class="btnWrapperInner row">
     
                                                 <div class="col-5">
@@ -295,8 +295,8 @@
                                 <script src="js/jquery.ui.touch-punch.min.js"></script>
                                 <script>
                                     $(function () {
-                                        $(".draggable").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", aspectRatio: "parent" });
-                                        $(".draggableText").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", minHeight: "content", minWidth: "content"});
+                                        $(".draggable").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", aspectRatio: "parent", handles: "e"}).removeAttr('height');
+                                        $(".draggableText").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", minHeight: "content", minWidth: "content", handles: "e"}).removeAttr('height');
                                     });
                                 </script>
                                 <div class="col-md-5">
@@ -316,6 +316,13 @@
                                                 رنگ نوشته
                                                 <input type="color" name="changeTextColor" id="changeTextColor">
                                             </label>
+
+                                            <div class="position-relative">
+                                                <label class="changeItems changeTextFontBtn">
+                                                    سایز نوشته
+                                                </label>
+                                                <input type="range" min="10" max="30" name="changeTextFont" id="changeTextFont">
+                                            </div>
 
                                             <div class="changeItems" data-bs-toggle="modal" data-bs-target="#addShapeModal">
                                                 شکل

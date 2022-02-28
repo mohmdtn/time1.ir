@@ -1482,6 +1482,11 @@ header, .headContent{
     transition: outline .3s;
     border-radius: 10px;
     position: absolute;
+    text-size-adjust: 80%;
+}
+
+.draggableText p{
+    margin: 0;
 }
 
 .draggableText:hover{
@@ -1525,6 +1530,13 @@ header, .headContent{
 #changeTextColor{
     position: absolute;
     visibility: hidden;
+}
+
+#changeTextFont{
+    position: absolute;
+    left: -40%;
+    top: -40%;
+    display: none;
 }
 
 .btnWrapperInner{
@@ -1826,6 +1838,14 @@ header, .headContent{
         font-size: 25px;
     }
 
+        /* /////// instagram page change btns */
+        .changeItems{
+            width: 60px;
+            height: 60px;
+            font-size: 12px;
+        }
+        /* \\\\\\\ end of instagram page change btns */
+
 }
 
 
@@ -1871,9 +1891,9 @@ header, .headContent{
 
     /* /////// instagram page change btns */
     .changeItems{
-        width: 50px;
-        height: 50px;
-        font-size: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 8px;
     }
     /* \\\\\\\ end of instagram page change btns */
 }

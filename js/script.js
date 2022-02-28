@@ -178,7 +178,7 @@ $(".sendDataBtn").click(function () {
 
   // get dragable info
   var postItems = [];
-  $(".postOutputInner").children().each(function () {
+  $(".postOutputInner .draggable").each(function () {
     var items = this;
     var postHeight = $(this).css("height");
     var postWidth = $(this).css("width");
@@ -187,14 +187,22 @@ $(".sendDataBtn").click(function () {
 
     postItems.push({ height: postHeight, width: postWidth, Top: PostTop, Left: postLeft });
   });
+  // get text info
+  var postTextHeight = $(".postOutputWrapper .draggableText").css("height");
+  var postTextWidth = $(".postOutputWrapper .draggableText").css("width");
+  var PostTextTop = $(".postOutputWrapper .draggableText").css("top");
+  var postTextLeft = $(".postOutputWrapper .draggableText").css("left");
+  var postTextColor = $(".postOutputWrapper .draggableText p").css("color");
+  var postTextSize = $(".postOutputWrapper .draggableText p").css("font-size");
+  var postText = $(".postOutputWrapper .draggableText p").text();
+  postItems.push({postTextHeight: postTextHeight, postTextWidth:postTextWidth, PostTextTop:PostTextTop, postTextLeft:postTextLeft, postTextColor:postTextColor, postTextSize, postText})
 
   // console.log(postItems);
 
   var postBackground = $(".postOutputInner").css("background-image");
-  var postbBgHeight = $(".postOutputInner").css("height");
+  var postBgHeight = $(".postOutputInner").css("height");
   var postBgWidth = $(".postOutputInner").css("width");
-
-  var postWrapper = { postbg: postBackground, postBgWidth: postBgWidth, postBgHeight: postbBgHeight };
+  var postWrapper = { postbg: postBackground, postBgWidth: postBgWidth, postBgHeight: postBgHeight };
   // console.log(postWrapper);
 
 
@@ -203,7 +211,7 @@ $(".sendDataBtn").click(function () {
 
 
   var storyItems = [];
-  $(".storyOutputInner").children().each(function () {
+  $(".storyOutputInner .draggable").each(function () {
     var items = this;
     var storyHeight = $(this).css("height");
     var storyWidth = $(this).css("width");
@@ -216,10 +224,20 @@ $(".sendDataBtn").click(function () {
 
     storyItems.push({ SIheight: storyHeight, SIwidth: storyWidth, SITop: storyTop, SILeft: storyLeft });
   });
+  // get text info
+  var storyTextHeight = $(".storyOutputInner .draggableText").css("height");
+  var storyTextWidth = $(".storyOutputInner .draggableText").css("width");
+  var storyTextTop = $(".storyOutputInner .draggableText").css("top");
+  var storyTextLeft = $(".storyOutputInner .draggableText").css("left");
+  var storyTextColor = $(".storyOutputInner .draggableText p").css("color");
+  var storyTextSize = $(".storyOutputInner .draggableText p").css("font-size");
+  var storyText = $(".storyOutputInner .draggableText p").text();
+  storyItems.push({storyTextHeight: storyTextHeight, storyTextWidth:storyTextWidth, storyTextTop:storyTextTop, storyTextLeft:storyTextLeft, storyTextColor:storyTextColor, storyTextSize, storyText})
+  
   var storyBackground = $(".storyOutputInner").css("background-image");
-  var storybBgHeight = $(".storyOutputInner").css("height");
+  var storyBgHeight = $(".storyOutputInner").css("height");
   var storyBgWidth = $(".storyOutputInner").css("width");
-  var storyWrapper = { storybg: storyBackground, storyBgWidth: storybBgHeight, storyBgHeight: storyBgWidth };
+  var storyWrapper = { storybg: storyBackground, storyBackground: storyBgHeight, storyBgHeight: storyBgWidth };
 
   // console.log(storyWrapper);
   // console.log("story bg=>" + storyBackground + " story bg width=>" + storyBgWidth + " story bg height=>" + storybBgHeight);
@@ -686,6 +704,23 @@ $("#changeTextColor").change(function () {
     $(".storyOutputInner .draggableText p").css("color", postTextColor);
   }
 
+});
+
+// set font size to text
+$(".changeTextFontBtn").click(function (e) { 
+  $("#changeTextFont").slideToggle();
+}); 
+
+$("#changeTextFont").change(function () { 
+
+  var fontSize = $("#changeTextFont").val() + "px";
+
+  if ($(".postOutputWrapper").css("display") == "block") {
+    $(".postOutputInner .draggableText p").css("font-size", fontSize);
+  }
+  else {
+    $(".storyOutputInner .draggableText p").css("font-size", fontSize);
+  }
 });
 
 
