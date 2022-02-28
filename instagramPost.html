@@ -269,8 +269,22 @@
                                             </div>
                                         </div>
 
-                                        <div class="hourTime settingItem pt-5 d-none d-md-block">
+                                        <!-- <div class="hourTime settingItem pt-5 d-none d-md-block">
                                             <h4 class="m-0">تاریخ</h4>
+                                        </div> -->
+
+                                        <div class="btnWrapper py-1">
+                                            <div class="btnWrapperInner row">
+    
+                                                <div class="col-5">
+                                                    <div class="resetBtn btn btn-dark"><a href="">حالت پیش فرض</a></div>
+                                                </div>
+
+                                                <div class="col-7">
+                                                    <div class="sendDataBtn btn btn-dark">ثبت تغیرات</div>
+                                                </div>
+    
+                                            </div>
                                         </div>
 
                                     </div>
@@ -287,11 +301,25 @@
                                 <div class="col-md-5">
 
                                     <div class="postOutput">
-                                        <div class="changeBg position-relative">
-                                            <div class="changeBgInner" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
+                                        <div class="changeBtns position-relative">
+
+                                            <div class="changeBgInner changeItems" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                 پس زمینه
                                             </div>
+
+                                            <div class="changeItems" data-bs-toggle="modal" data-bs-target="#addTextModal">
+                                                نوشته
+                                            </div>
+
+                                            <label class="changeItems" for="changeTextColor">
+                                                رنگ نوشته
+                                                <input type="color" name="changeTextColor" id="changeTextColor">
+                                            </label>
+
+                                            <div class="changeItems" data-bs-toggle="modal" data-bs-target="#addShapeModal">
+                                                شکل
+                                            </div>
+
                                         </div>
                                         <div class="postOutputWrapper">
                                             <div class="postOutputInner p-1" style="background-image: url(images/calenderBg.png);">
@@ -313,8 +341,7 @@
                                     </div>
 
                                 </div>
-                                <div class="sendDataBtn btn btn-info">click</div>
-                                <div class="mmd"><p></p></div>
+
                                 <div class="col-12">
                                     <section class="calenderWrapper py-5">
                                         <section class="calender py-5">
@@ -573,6 +600,59 @@
         </div>
     </div>
     <!---------------------------------- end of modal -->
+
+
+
+
+
+
+
+
+
+
+    <!---------------------------------- add text modal -->
+    <div class="modal fade" id="addTextModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-body modalBody addTextModal p-4">
+                    <h4>افزودن متن</h4>
+
+                    <textarea class="form-control" name="" id="" rows="4"></textarea>
+
+                    <center><div class="btn btn-dark saveTextBtn">ثبت متن</div></center>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!---------------------------------- end of add text modal -->
+
+
+
+
+
+    <!---------------------------------- add shape modal -->
+    <div class="modal fade" id="addShapeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-body modalBody addTextModal p-4">
+                    <h4>افزودن شکل</h4>
+
+                    <form action="">
+                        <input type="file">
+                        <center><button class="btn btn-dark saveTextBtn">ثبت شکل</button></center>
+                    </form>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!---------------------------------- end of add shape modal -->
+
+
 
 
 

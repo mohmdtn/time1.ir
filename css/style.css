@@ -1472,42 +1472,74 @@ header, .headContent{
     outline: 9px solid #5567f296;
 }
 
+.changeBtns{
+    background-color: #fff;
+    padding: 10px 10px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+}
 
-.changeBgInner{
+.changeBtns{
+    display: flex;
+    justify-content: space-around;
+}
+
+.changeItems{
     background-color: #fff;
     border: 2px solid var(--site-pourple);
     border-radius: 50%;
     color: var(--site-pourple);
-    font-size: 16px;
-    width: 80px;
-    height: 80px;
+    font-size: 14px;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: -130px;
-    left: 30px;
     cursor: pointer;
     transition: .3s;
 }
 
-.changeBgInner::before{
-    content: "";
-    background-color: var(--site-pourple);
-    height: 100px;
-    width: 1px;
-    position: absolute;
-    top: 77px;
-    right: 36px;
-}
-
-.changeBgInner:hover{
+.changeItems:hover{
     background-color: var(--site-pourple);
     color: #fff;
     box-shadow: 0px 32px 30px #00000031;
 }
 
+#changeTextColor{
+    position: absolute;
+    visibility: hidden;
+}
 
+.btnWrapperInner{
+    padding-top: 40px;
+}
+
+.sendDataBtn{
+    background-color: #fff;
+    color: var(--site-pourple);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 19px;
+    border: 3px solid var(--site-pourple);
+    box-shadow: 0px 30px 42px #2C2C2C26;
+    width: 100%;
+}
+
+.resetBtn{
+    background-color: #fff;
+    color: var(--site-pourple);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 19px;
+    border: 3px solid #fff;
+    box-shadow: 0px 30px 42px #2C2C2C26;
+    width: 100%;
+}
+
+.resetBtn a{
+    text-decoration: none;
+    color: var(--site-pourple);
+}
 
 /* /////////////////////////////////// modal and slider */
 
@@ -1620,6 +1652,25 @@ header, .headContent{
     border: none;
     border-radius: 10px;
     box-shadow: 0px 20px 92px #00000029;
+}
+
+/* /////////////////////// add text modal */
+
+.addTextModal textarea{
+    border: 2px solid var(--site-pourple);
+    border-radius: 25px;
+    border-bottom-left-radius: 3px;
+}
+
+.saveTextBtn{
+    margin-top: 20px;
+    background-color: var(--site-pourple);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-size: 19px;
+    border: none;
+    box-shadow: 0px 30px 42px #2C2C2C26;
 }
 
 /* /////////////////////////////////// end of isntagram post page */
@@ -1799,6 +1850,15 @@ header, .headContent{
         font-size: 14px;
     }
     /* \\\\\\\ end watch and side menu fix */
+
+
+    /* /////// instagram page change btns */
+    .changeItems{
+        width: 50px;
+        height: 50px;
+        font-size: 10px;
+    }
+    /* \\\\\\\ end of instagram page change btns */
 }
 
 
@@ -1866,15 +1926,10 @@ header, .headContent{
         width: calc(100% - 106px);
     }
 
-    .changeBg{
-        padding-top: 25px;
-    }
-
-    .changeBgInner{
-        position: relative;
-        top: -15px;
-        left: -50px;
-        text-align: left;
+    .changeItems{
+        width: 55px;
+        height: 55px;
+        font-size: 10px;
     }
 
     /* /////////// code page */
