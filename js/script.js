@@ -184,8 +184,9 @@ $(".sendDataBtn").click(function () {
     var postWidth = $(this).css("width");
     var PostTop = $(this).css("top");
     var postLeft = $(this).css("left");
+    var postSrc = $(this).find("img").attr("src");
 
-    postItems.push({ height: postHeight, width: postWidth, Top: PostTop, Left: postLeft });
+    postItems.push({ height: postHeight, width: postWidth, Top: PostTop, Left: postLeft, src:postSrc });
   });
   // get text info
   var postTextHeight = $(".postOutputWrapper .draggableText").css("height");
@@ -217,12 +218,13 @@ $(".sendDataBtn").click(function () {
     var storyWidth = $(this).css("width");
     var storyTop = $(this).css("top");
     var storyLeft = $(this).css("left");
+    var storySrc = $(this).find("img").attr("src");
 
     // var items2 = [];
     // items2.push("story height=>" + storyHeight + " story width=>" + storyWidth + " story top=>" + storyTop);
     // console.log(JSON.stringify(items2));
 
-    storyItems.push({ SIheight: storyHeight, SIwidth: storyWidth, SITop: storyTop, SILeft: storyLeft });
+    storyItems.push({ SIheight: storyHeight, SIwidth: storyWidth, SITop: storyTop, SILeft: storyLeft, SIsrc:storySrc });
   });
   // get text info
   var storyTextHeight = $(".storyOutputInner .draggableText").css("height");
@@ -778,4 +780,35 @@ imgInp.onchange = evt => {
 $(".imgInpLabel").click(function () {
   cropper.destroy();
   $(".imagePreview").slideUp("fast");
+});
+
+
+
+// jq add shape to post and story
+$(".shapeDefultWrapper .slideInner .addShapeBtn").click(function (e) { 
+  var item = $(this).parent().parent().find("img").attr("src");
+
+  if ($(".postOutputWrapper").css("display") == "block") {
+    $(".postOutputInner").append('<div class="draggable" style="left: 30%;"><img src="'+ item +'" alt=""></div>');
+  }
+  else {
+    $(".storyOutputInner").append('<div class="draggable" style="left: 30%;"><img src="'+ item +'" alt=""></div>');
+  }
+  $(".draggable").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", aspectRatio: "parent", handles: "e"}).removeAttr('height');
+  
+});
+
+// jq remove shape from post and story
+$(".shapeDefultWrapper .slideInner .deleteShapeBtn").click(function (e) { 
+  var item = $(this).parent().parent().find("img").attr("src");
+  var postElement = $('.postOutputWrapper .draggable img[src="'+ item +'"]').parent();
+  var storyElement = $('.storyOutputWrapper .draggable img[src="'+ item +'"]').parent();
+
+  if ($(".postOutputWrapper").css("display") == "block") {
+    $(postElement).remove();
+  }
+  else {
+    $(storyElement).remove();
+  }
+  
 });

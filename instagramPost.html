@@ -296,7 +296,7 @@
                                 <script>
                                     $(function () {
                                         $(".draggable").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", aspectRatio: "parent", handles: "e"}).removeAttr('height');
-                                        $(".draggableText").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", minHeight: "content", minWidth: "content", handles: "e"}).removeAttr('height');
+                                        $(".draggableText").draggable({ containment: "parent", stack: ".draggable" }).resizable({ containment: "parent", minHeight: "content", minWidth: 60, handles: "e"}).removeAttr('height');
                                     });
                                 </script>
                                 <div class="col-md-5">
@@ -653,6 +653,76 @@
                         <input type="file">
                         <center><button class="btn btn-dark saveTextBtn">ثبت شکل</button></center>
                     </form>
+
+                    <div class="shapeDefultWrapper">
+                        <h4>شکل های پیش فرض</h4>
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="slideInner">
+                                        <img src="images/analys.png" alt="">
+                                        <div>
+                                            <i class="fas fa-trash-alt deleteShapeBtn" title="حذف کردن شکل"></i>
+                                            <i class="fas fa-plus-circle addShapeBtn" title="اضافه کردن شکل"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slideInner">
+                                        <img src="images/contactUs.png" alt="">
+                                        <div>
+                                            <i class="fas fa-trash-alt deleteShapeBtn" title="حذف کردن شکل"></i>
+                                            <i class="fas fa-plus-circle addShapeBtn" title="اضافه کردن شکل"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slideInner">
+                                        <img src="images/pc.png" alt="">
+                                        <div>
+                                            <i class="fas fa-trash-alt deleteShapeBtn" title="حذف کردن شکل"></i>
+                                            <i class="fas fa-plus-circle addShapeBtn" title="اضافه کردن شکل"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slideInner">
+                                        <img src="images/sms.png" alt="">
+                                        <div>
+                                            <i class="fas fa-trash-alt deleteShapeBtn" title="حذف کردن شکل"></i>
+                                            <i class="fas fa-plus-circle addShapeBtn" title="اضافه کردن شکل"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slideInner">
+                                        <img src="images/manCalender.png" alt="">
+                                        <div>
+                                            <i class="fas fa-trash-alt deleteShapeBtn" title="حذف کردن شکل"></i>
+                                            <i class="fas fa-plus-circle addShapeBtn" title="اضافه کردن شکل"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slideInner">
+                                        <img src="images/logo.png" alt="">
+                                        <div>
+                                            <i class="fas fa-trash-alt deleteShapeBtn" title="حذف کردن شکل"></i>
+                                            <i class="fas fa-plus-circle addShapeBtn" title="اضافه کردن شکل"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nextPrv d-flex justify-content-center align-items-center">
+                                <div class="prvBtn">
+                                    <i class="fas fa-angle-right"></i>
+                                </div>
+                                <div class="nextBtn">
+                                    <i class="fas fa-angle-left"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
                 </div>
 
