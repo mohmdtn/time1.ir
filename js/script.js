@@ -239,7 +239,7 @@ $(".sendDataBtn").click(function () {
   var storyBackground = $(".storyOutputInner").css("background-image");
   var storyBgHeight = $(".storyOutputInner").css("height");
   var storyBgWidth = $(".storyOutputInner").css("width");
-  var storyWrapper = { storybg: storyBackground, storyBackground: storyBgHeight, storyBgHeight: storyBgWidth };
+  var storyWrapper = { storybg: storyBackground, storyBgWidth: storyBgWidth, storyBgHeight: storyBgHeight };
 
   // console.log(storyWrapper);
   // console.log("story bg=>" + storyBackground + " story bg width=>" + storyBgWidth + " story bg height=>" + storybBgHeight);
