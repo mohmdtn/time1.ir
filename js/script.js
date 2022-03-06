@@ -19,6 +19,19 @@ function checkTime(i) {
 
 
 
+
+// show footer input for login
+$(".fastLogin h6 , .footerLogin").click(function () { 
+  $(".fastLogin input[name='footerLogin']").slideDown();
+});
+
+// just numbers for numbers input
+$(".numberCheck").keypress(function (e) {
+  if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+    return false;
+ }
+});
+
 // menu show button
 $(".navbar-toggler").click(function (e) {
   $(".menuSide").toggleClass("openMenu");

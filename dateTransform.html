@@ -208,7 +208,7 @@
                                 <div class="col-md-4 pb-3 pb-md-0 text-center">
                                     <h3>سال</h3>
                                     <div class="dateTransformYearInput">
-                                        <input type="text" value="1400" name="transformDateYear">
+                                        <input type="text" value="1400" maxlength="4" class="numberCheck" name="transformDateYear">
                                     </div>
                                 </div>
 
@@ -314,11 +314,12 @@
                                 </div>
                             </div>
 
-                            <div class="">
-                                <h6>شماره تفن خود را وارد کنید</h6>
-                                <a href="">
-                                    <div class="footerLogin btn btn-dark">عضویت</div>
-                                </a>
+                            <div class="fastLogin">
+                                <h6>شماره تلفن خود را وارد کنید</h6>
+                                <form action="">
+                                    <input type="text" class="numberCheck" name="footerLogin" maxlength="11" id="" placeholder="+98" required>
+                                    <input type="submit" class="footerLogin btn btn-dark" value="عضویت">
+                                </form>
                             </div>
 
                         </div>

@@ -226,12 +226,12 @@
                                             <div class="row align-items-end">
                                                 <div class="col-sm-4 singleDayTime d-flex flex-column pb-3 pb-md-0">
                                                     <label for="">ساعت</label>
-                                                    <input type="text" name="hour" maxlength="2" value="1">
+                                                    <input type="text" name="hour" maxlength="2" class="numberCheck" value="1">
                                                 </div>
 
                                                 <div class="col-sm-4 singleDayTime d-flex flex-column pb-3 pb-md-0">
                                                     <label for="">دقیقه</label>
-                                                    <input type="text" name="minute" maxlength="2" value="00">
+                                                    <input type="text" name="minute" maxlength="2" class="numberCheck" value="00">
                                                 </div>
 
                                                 <div class="col-sm-4 singleDayTime d-flex flex-column pb-3 pb-md-0">
@@ -761,11 +761,12 @@
                                 </div>
                             </div>
 
-                            <div class="">
-                                <h6>شماره تفن خود را وارد کنید</h6>
-                                <a href="">
-                                    <div class="footerLogin btn btn-dark">عضویت</div>
-                                </a>
+                            <div class="fastLogin">
+                                <h6>شماره تلفن خود را وارد کنید</h6>
+                                <form action="">
+                                    <input type="text" class="numberCheck" name="footerLogin" maxlength="11" id="" placeholder="+98" required>
+                                    <input type="submit" class="footerLogin btn btn-dark" value="عضویت">
+                                </form>
                             </div>
 
                         </div>

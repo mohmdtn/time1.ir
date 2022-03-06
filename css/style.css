@@ -1847,6 +1847,30 @@ header, .headContent{
     padding: 5px 25px;
 }
 
+.fastLogin form input[name="footerLogin"]{
+    border: none;
+    outline: none;
+    background-color: #00000000;
+    border-bottom: 2px solid #d1d1d1;
+    border-radius: 0;
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-bottom: 2px;
+    transition: .2s;
+    margin: 0 auto;
+    display: none;
+    margin-bottom: 10px;
+}
+
+.fastLogin form input[name="footerLogin"]:focus{
+    box-shadow: none;
+    border-bottom: 3px solid var(--site-pourple);
+}
+
+.numberCheck{
+    direction: ltr;
+}
+
 /* //////////////////////////////// end of footer */
 
 
