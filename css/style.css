@@ -1142,26 +1142,12 @@ header, .headContent{
     cursor: pointer;
 }
 
-.primeWrapperClicked{
-    transform: scale(.85);
-    box-shadow: inset 0px 0px 14px #00000029, 0px 11px 40px 0px #00000063;
-}
-
-.primeWrapperDifferent{
-    background-color: var(--site-pourple);
-    color: #fff;
-}
-
 .primeInner{
     border: 1px solid #5568F2;
     padding: 10px;
     border-radius: 20px;
     position: relative;
     height: 100%;
-}
-
-.primeWrapperDifferent .primeInner{
-    border: 1px solid #323846;
 }
 
 .primeInner h4{
@@ -1175,10 +1161,6 @@ header, .headContent{
     line-height: 1.8;
     font-weight: bold;
     color: var(--stie-high-gray);
-}
-
-.primeWrapperDifferent h4{
-    color: #fff;
 }
 
 .oldPrice{
@@ -1200,6 +1182,26 @@ header, .headContent{
     font-family: "IRANyekanBold";
     color: var(--stie-high-gray);
     font-size: 30px
+}
+
+.primeWrapperClicked{
+    transform: scale(.85);
+    box-shadow: inset 0px 0px 14px #00000029, 0px 11px 40px 0px #00000063;
+    background-color: var(--site-pourple);
+    color: #fff !important;
+}
+
+.primeWrapperClicked h4 , .primeWrapperClicked p{
+    color: #fff;
+}
+
+.primeWrapperClicked .primeOff{
+    background-color: #fff;
+    color: var(--site-pourple);
+}
+
+.primeWrapperClicked .primeInner{
+    border: 1px solid #fff;
 }
 
 /* ///////////////// edit profile section */
